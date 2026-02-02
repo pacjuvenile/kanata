@@ -4,14 +4,15 @@
   caps
   y p
   h j k l
-  alt
+  lsft
+  lalt
 )
 
 (defalias 
   ;; 短按esc,长按ctrl
   caps (tap-hold 200 200 esc lctrl)
 
-  alt (multi alt (layer-while-held alted))
+  lalt (multi alt (layer-while-held alted))
   ;; alt + h/j/k/l --> <left>/<down>/<up>/<right>
   left (multi (release-key alt) left)
   down (multi (release-key alt) down)
@@ -28,13 +29,15 @@
   @caps
   _ _
   _ _ _ _
-  @alt
+  _
+  @lalt
 )
 
 (deflayer alted
   _
   @ctrl-c @ctrl-v
   @left @down @up @right
+  _
   _
 )
 
