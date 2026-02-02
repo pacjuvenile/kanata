@@ -20,9 +20,10 @@
   right (multi (release-key alt) right)
   ;; alt + y/Y/p/P --> <C-c>
   ctrl-c (multi (release-key alt) C-c)
-  ;; ctrl-C (multi (release-key alt) C-S-c)
   ctrl-v (multi (release-key alt) C-v)
-  ;; ctrl-V (multi (release-key alt) C-S-v)
+  alt-shift (layer-while-held alted-shifted)
+  ctrl-C (multi (release-key lsft) (release-key lalt) C-S-c)
+  ctrl-V (multi (release-key lsft) (release-key lalt) C-S-v)
 )
 
 (deflayer base 
@@ -37,7 +38,14 @@
   _
   @ctrl-c @ctrl-v
   @left @down @up @right
-  _
+  @alt-shift
   _
 )
 
+(deflayer alted-shifted
+  _
+  @ctrl-C @ctrl-V
+  _ _ _ _
+  _
+  _
+)
