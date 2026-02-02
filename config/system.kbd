@@ -13,15 +13,17 @@
   caps (tap-hold 200 200 esc lctrl)
 
   lalt (multi alt (layer-while-held alted))
+  alt-shift (layer-while-held alted-shifted)
+
   ;; alt + h/j/k/l --> <left>/<down>/<up>/<right>
   left (multi (release-key alt) left)
   down (multi (release-key alt) down)
   up (multi (release-key alt) up)
   right (multi (release-key alt) right)
-  ;; alt + y/Y/p/P --> <C-c>
+
+  ;; alt + y/Y/p/P --> <ctrl-c>/<ctrl-C>/<ctrl-v>/<ctrl-V>
   ctrl-c (multi (release-key alt) C-c)
   ctrl-v (multi (release-key alt) C-v)
-  alt-shift (layer-while-held alted-shifted)
   ctrl-C (multi (release-key lsft) (release-key lalt) C-S-c)
   ctrl-V (multi (release-key lsft) (release-key lalt) C-S-v)
 )
