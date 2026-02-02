@@ -1,7 +1,32 @@
 (defcfg process-unmapped-keys yes)
 
-(defsrc caps)
+(defsrc 
+  caps
+  h j k l
+  alt
+)
 
-(defalias caps (tap-hold 300 300 esc lctrl))
+(defalias 
+  ;; 短按esc,长按ctrl
+  caps (tap-hold 200 200 esc lctrl)
 
-(deflayer default @caps)
+  alt (multi alt (layer-while-held alted))
+  ;; alt + h/j/k/l --> 方向键
+  left (multi (release-key alt) left)
+  down (multi (release-key alt) down)
+  up (multi (release-key alt) up)
+  right (multi (release-key alt) right)
+)
+
+(deflayer base 
+  @caps
+  _ _ _ _
+  @alt
+)
+
+(deflayer alted
+  _
+  @left @down @up @right
+  _
+)
+
