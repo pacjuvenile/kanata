@@ -173,7 +173,6 @@
   lctl    lmet  lalt              @C-spc            ralt  menu  rctl  
 )
 
-
 (deflayer capsed-shifted 
   @C-S-grv  @C-S-1  @C-S-2  @C-S-3  @C-S-4  @C-S-5  @C-S-6  @C-S-7  @C-S-8  @C-S-9  @C-S-0  -   =   bspc
   tab     @C-q  @C-w  @C-e  @C-r  @C-t  @C-y  @C-u  @C-i  @C-o  @C-p    @C-[  @C-]  @C-\
