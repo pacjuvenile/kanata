@@ -1,53 +1,123 @@
 (defcfg process-unmapped-keys yes)
 
 (defsrc 
-  caps
-  y p
-  h j k l
-  lsft
-  lalt
+  grv     1     2     3     4     5     6     7     8     9     0     -     =     bspc
+  tab     q     w     e     r     t     y     u     i     o     p     [     ]     \
+  caps    a     s     d     f     g     h     j     k     l     ;     '     ret
+  lsft    z     x     c     v     b     n     m     ,     .     /     rsft  
+  lctl    lmet  lalt              spc               ralt  menu  rctl  
 )
 
 (defalias 
-  ;; 短按esc,长按ctrl
-  caps (tap-hold 200 200 esc lctrl)
+  ;; 短按esc,长按模拟ctrl
+  caps    (tap-hold 200 200 esc (layer-while-held capsed))
+  C-grv   (multi (release-key caps) C-grv)
+  C-1     (multi (release-key caps) C-1)
+  C-2     (multi (release-key caps) C-2)
+  C-3     (multi (release-key caps) C-3)
+  C-4     (multi (release-key caps) C-4)
+  C-5     (multi (release-key caps) C-5)
+  C-6     (multi (release-key caps) C-6)
+  C-7     (multi (release-key caps) C-7)
+  C-8     (multi (release-key caps) C-8)
+  C-9     (multi (release-key caps) C-9)
+  C-0     (multi (release-key caps) C-0)
+  C--     (multi (release-key caps) C--)
+  C-=     (multi (release-key caps) C-=)
+  C-bspc  (multi (release-key caps) C-bspc)
+  C-tab   (multi (release-key caps) C-tab)
+  C-q     (multi (release-key caps) C-q)
+  C-w     (multi (release-key caps) C-w)
+  C-e     (multi (release-key caps) C-e)
+  C-r     (multi (release-key caps) C-r)
+  C-t     (multi (release-key caps) C-t)
+  C-y     (multi (release-key caps) C-y)
+  C-u     (multi (release-key caps) C-u)
+  C-i     (multi (release-key caps) C-i)
+  C-o     (multi (release-key caps) C-o)
+  C-p     (multi (release-key caps) C-p)
+  C-[     (multi (release-key caps) C-[)
+  C-]     (multi (release-key caps) C-])
+  C-\     (multi (release-key caps) C-\)
+  ;; C-tab
+  C-a     (multi (release-key caps) C-a)
+  C-s     (multi (release-key caps) C-s)
+  C-d     (multi (release-key caps) C-d)
+  C-f     (multi (release-key caps) C-f)
+  C-g     (multi (release-key caps) C-g)
+  C-h     (multi (release-key caps) C-h)
+  C-j     (multi (release-key caps) C-j)
+  C-k     (multi (release-key caps) C-k)
+  C-l     (multi (release-key caps) C-l)
+  C-;     (multi (release-key caps) C-;)
+  C-'     (multi (release-key caps) C-')
+  C-ret   (multi (release-key caps) C-ret)
+  ; C-caps
+  C-z     (multi (release-key caps) C-z)
+  C-x     (multi (release-key caps) C-x)
+  C-c     (multi (release-key caps) C-c)
+  C-v     (multi (release-key caps) C-v)
+  C-b     (multi (release-key caps) C-b)
+  C-n     (multi (release-key caps) C-n)
+  C-m     (multi (release-key caps) C-m)
+  C-,     (multi (release-key caps) C-,)
+  C-.     (multi (release-key caps) C-n)
+  C-/     (multi (release-key caps) C-/)
+  ;; C-rsft
+  ;; C-lctl
+  ;; C-lmet
+  ;; C-lalt
+  C-spc   (multi (release-key caps) C-spc)
+  ;; C-ralt
+  ;; C-menu
+  ;; C-rctl
 
+  ;; 模拟alt按下状态
   lalt (multi alt (layer-while-held alted))
-  alt-shift (layer-while-held alted-shifted)
+  ;; 模拟alt + shift按下状态
+  A-lsft  (layer-while-held alted-shifted)
 
   ;; alt + h/j/k/l --> <left>/<down>/<up>/<right>
-  left (multi (release-key alt) left)
-  down (multi (release-key alt) down)
-  up (multi (release-key alt) up)
-  right (multi (release-key alt) right)
+  A-h (multi (release-key alt) left)
+  A-j (multi (release-key alt) down)
+  A-k (multi (release-key alt) up)
+  A-l (multi (release-key alt) right)
 
   ;; alt + y/Y/p/P --> <ctrl-c>/<ctrl-C>/<ctrl-v>/<ctrl-V>
-  ctrl-c (multi (release-key alt) C-c)
-  ctrl-v (multi (release-key alt) C-v)
-  ctrl-C (multi (release-key lsft) (release-key lalt) C-S-c)
-  ctrl-V (multi (release-key lsft) (release-key lalt) C-S-v)
+  A-y (multi (release-key alt) C-c)
+  A-Y (multi (release-key lsft) (release-key lalt) C-S-c)
+  A-p (multi (release-key alt) C-v)
+  A-P (multi (release-key lsft) (release-key lalt) C-S-v)
 )
 
 (deflayer base 
-  @caps
-  _ _
-  _ _ _ _
-  _
-  @lalt
+  grv     1     2     3     4     5     6     7     8     9     0     -     =     bspc
+  tab     q     w     e     r     t     y     u     i     o     p     [     ]     \
+  @caps   a     s     d     f     g     h     j     k     l     ;     '     ret
+  lsft    z     x     c     v     b     n     m     ,     .     /     rsft  
+  lctl    lmet  @lalt             spc               ralt  menu  rctl  
+)
+
+(deflayer capsed 
+  @C-grv  @C-1  @C-2  @C-3  @C-4  @C-5	@C-6  @C-7  @C-8  @C-9  @C-0    @C--  @C-=  @C-bspc
+  tab     @C-q  @C-w  @C-e  @C-r  @C-t  @C-y  @C-u  @C-i  @C-o  @C-p    @C-[  @C-]  @C-\
+  caps    @C-a  @C-s  @C-d  @C-f  @C-g  @C-h  @C-j  @C-k  @C-l  @C-;    @C-'  @C-ret
+  lsft    @C-z  @C-x  @C-c  @C-v  @C-b  @C-n  @C-m  @C-,  @C-.  @C-/    rsft  
+  lctl    lmet  lalt              @C-spc            ralt  menu  rctl  
 )
 
 (deflayer alted
-  _
-  @ctrl-c @ctrl-v
-  @left @down @up @right
-  @alt-shift
-  _
+  grv     1     2     3     4     5     6     7     8     9     0     -     =     bspc
+  tab     q     w     e     r     t     @A-y  u     i     o     @A-p    [     ]     \
+  caps    a     s     d     f     g     @A-h  @A-j  @A-k  @A-l  ;       '     ret
+  @A-lsft z     x     c     v     b     n     m     ,     .     /     rsft  
+  lctl    lmet  lalt              spc               ralt  menu  rctl  
 )
 
-(deflayer alted-shifted
-  _
-  @ctrl-C @ctrl-V
-  _ _ _ _
-  _
-  _
+(deflayer alted-shifted 
+  grv     1     2     3     4     5     6     7     8     9     0     -     =     bspc
+  tab     q     w     e     r     t     @A-Y  u     i     o     @A-P    [     ]     \
+  caps    a     s     d     f     g     h     j     k     l     ;     '     ret
+  lsft    z     x     c     v     b     n     m     ,     .     /     rsft  
+  lctl    lmet  lalt              spc               ralt  menu  rctl  
 )
