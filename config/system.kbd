@@ -13,7 +13,7 @@
 
 (defalias 
   ;; 短按esc,长按模拟ctrl
-  caps    (tap-hold 300 300 esc lctl)
+  caps    (tap-hold 150 150 esc lctl)
 
   ;; 模拟alt按下状态
   lalt    (multi alt (layer-while-held alted))
