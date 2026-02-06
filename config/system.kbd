@@ -14,8 +14,6 @@
 (defalias 
   ;; 短按esc,长按模拟ctrl
   caps    (tap-hold 300 300 esc lctl)
-  ;; lshift按下
-  lsft    (multi lsft (layer-while-held shifted))
 
   ;; 模拟alt按下状态
   lalt    (multi alt (layer-while-held alted))
@@ -45,16 +43,8 @@
   grv     1     2     3     4     5     6     7     8     9     0     -     =     bspc
   tab     q     w     e     r     t     y     u     i     o     p     [     ]     \
   @caps   a     s     d     f     g     h     j     k     l     ;     '     ret
-  @lsft    z     x     c     v     b     n     m     ,     .     /     rsft  
-  lctl    lmet  @lalt             spc               ralt  menu  rctl  
-)
-
-(deflayer shifted 
-  grv     1     2     3     4     5     6     7     8     9     0     -     =     bspc
-  tab     q     w     e     r     t     y     u     i     o     p     [     ]     \
-  @caps   a     s     d     f     g     h     j     k     l     ;     '     ret
   lsft    z     x     c     v     b     n     m     ,     .     /     rsft  
-  lctl    lmet  lalt             spc               ralt  menu  rctl  
+  lctl    lmet  @lalt             spc               ralt  menu  rctl  
 )
 
 (deflayer alted
