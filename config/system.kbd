@@ -25,18 +25,12 @@
   M-r     (cmd "glazewm" "command" "wm-reload-config")
   M-q     (cmd "glazewm" "command" "wm-exit")
 
-  ;; 窗口管理
-  ;;M-t     (cmd "glazewm" "command" "toggle-tiling-direction")
-  M-t     (cmd "glazewm" "command" "toggle-tiling")
-  M-f     (cmd "glazewm" "command" "toggle-floating" "--centered")
-  M-S-f   (cmd "glazewm" "command" "toggle-fullscreen")   
-  M-c     (cmd "glazewm" "command" "close")
   ;; 焦点转移
   M-h     (cmd "glazewm" "command" "focus" "--direction" "left")
   M-j     (cmd "glazewm" "command" "focus" "--direction" "down")
   M-k     (cmd "glazewm" "command" "focus" "--direction" "up")
   M-l     (cmd "glazewm" "command" "focus" "--direction" "right")
-  ;; 窗口调整
+  ;; 宽高调整
   M-S-h   (cmd "glazewm" "command" "resize" "--width" "-2%")
   M-S-j   (cmd "glazewm" "command" "resize" "--height" "-2%") 
   M-S-k   (cmd "glazewm" "command" "resize" "--height" "+2%")
@@ -46,6 +40,25 @@
   M-A-j   (cmd "glazewm" "command" "move" "--direction" "down") 
   M-A-k   (cmd "glazewm" "command" "move" "--direction" "up")
   M-A-l   (cmd "glazewm" "command" "move" "--direction" "right")
+  ;; 窗口管理
+  ;;M-t     (cmd "glazewm" "command" "toggle-tiling-direction")
+  M-t     (cmd "glazewm" "command" "toggle-tiling")
+  M-f     (cmd "glazewm" "command" "toggle-floating" "--centered")
+  M-S-f   (cmd "glazewm" "command" "toggle-fullscreen")   
+  M-c     (cmd "glazewm" "command" "close")
+  ;; 工作区调整
+  M-n     (cmd "glazewm" "command" "focus" "--next-active-workspace")
+  M-p     (cmd "glazewm" "command" "focus" "--prev-active-workspace")
+  M-1     (cmd "glazewm" "command" "focus" "--workspace" "1")
+  M-2     (cmd "glazewm" "command" "focus" "--workspace" "2")
+  M-3     (cmd "glazewm" "command" "focus" "--workspace" "3")
+  M-4     (cmd "glazewm" "command" "focus" "--workspace" "4")
+  M-5     (cmd "glazewm" "command" "focus" "--workspace" "5")
+  M-6     (cmd "glazewm" "command" "focus" "--workspace" "6")
+  M-7     (cmd "glazewm" "command" "focus" "--workspace" "7")
+  M-8     (cmd "glazewm" "command" "focus" "--workspace" "8")
+  M-9     (cmd "glazewm" "command" "focus" "--workspace" "9")
+  M-0     (cmd "glazewm" "command" "focus" "--recent-workspace")
 
   ;; 短按esc,长按模拟ctrl
   caps    (tap-hold 200 200 esc lctl)
@@ -76,10 +89,10 @@
 
 (deflayer wined 
   M-esc     M-f1     M-f2     M-f3     M-f4    M-f5     M-f6      M-f7     M-f8     M-f9     M-f10      M-f11      M-f12      M-home     M-end      M-del
-  M-grv     M-1      M-2      M-3      M-4     M-5      M-6       M-7      M-8      M-9      M-0        M--        M-=        M-bspc
-  M-tab     @M-q     M-w      M-e      @M-r    @M-t     M-y       M-u      M-i      M-o      M-p        M-[        M-]        M-\
+  M-grv     @M-1     @M-2     @M-3     @M-4    @M-5     @M-6      @M-7     @M-8     @M-9     @M-0       M--        M-=        M-bspc
+  M-tab     @M-q     M-w      M-e      @M-r    @M-t     M-y       M-u      M-i      M-o      @M-p       M-[        M-]        M-\
   M-caps    M-a      @M-s     M-d      @M-f    M-g      @M-h      @M-j     @M-k     @M-l     M-;        M-'        M-ret
-  @M-lsft   M-z      M-x      @M-c     M-v     M-b      M-n       M-m      M-,      M-.      M-/        M-rsft  
+  @M-lsft   M-z      M-x      @M-c     M-v     M-b      @M-n      M-m      M-,      M-.      M-/        M-rsft  
   M-lctl    M-lmet   @M-lalt                   M-spc                M-ralt   M-menu   M-rctl  
 )
 
