@@ -21,9 +21,9 @@
 
   ;; wm配置(only for windows)
   ;; 启动/关闭
-  M-s     (cmd "glazewm" "start")
-  M-r     (cmd "glazewm" "command" "wm-reload-config")
-  M-q     (cmd "glazewm" "command" "wm-exit")
+  M-S-s   (cmd "glazewm" "start")
+  M-S-r   (cmd "glazewm" "command" "wm-reload-config")
+  M-S-q   (cmd "glazewm" "command" "wm-exit")
 
   ;; 焦点转移
   M-h     (cmd "glazewm" "command" "focus" "--direction" "left")
@@ -43,7 +43,7 @@
   ;; 窗口管理
   M-t     (cmd "glazewm" "command" "toggle-tiling")
   M-f     (cmd "glazewm" "command" "toggle-floating" "--centered")
-  M-c     (cmd "glazewm" "command" "close")
+  M-S-w   (cmd "glazewm" "command" "close")
   M-S-f   (cmd "glazewm" "command" "toggle-fullscreen")   
   M-S-t   (cmd "glazewm" "command" "toggle-tiling-direction")
   ;; 工作区调整
@@ -90,16 +90,16 @@
 (deflayer wined 
   M-esc     M-f1     M-f2     M-f3     M-f4    M-f5     M-f6      M-f7     M-f8     M-f9     M-f10      M-f11      M-f12      M-home     M-end      M-del
   M-grv     @M-1     @M-2     @M-3     @M-4    @M-5     @M-6      @M-7     @M-8     @M-9     @M-0       M--        M-=        M-bspc
-  M-tab     @M-q     M-w      M-e      @M-r    @M-t     M-y       M-u      M-i      M-o      @M-p       M-[        M-]        M-\
-  M-caps    M-a      @M-s     M-d      @M-f    M-g      @M-h      @M-j     @M-k     @M-l     M-;        M-'        M-ret
-  @M-lsft   M-z      M-x      @M-c     M-v     M-b      @M-n      M-m      M-,      M-.      M-/        M-rsft  
+  M-tab     M-q      M-w      M-e      M-r     @M-t     M-y       M-u      M-i      M-o      @M-p       M-[        M-]        M-\
+  M-caps    M-a      M-s      M-d      @M-f    M-g      @M-h      @M-j     @M-k     @M-l     M-;        M-'        M-ret
+  @M-lsft   M-z      M-x      M-c      M-v     M-b      @M-n      M-m      M-,      M-.      M-/        M-rsft  
   M-lctl    M-lmet   @M-lalt                   M-spc                M-ralt   M-menu   M-rctl  
 )
 
 (deflayer wined-shifted 
   M-S-esc     M-S-f1     M-S-f2     M-S-f3     M-S-f4     M-S-f5     M-S-f6     M-S-f7     M-S-f8     M-S-f9     M-S-f10     M-S-f11     M-S-f12    M-S-home   M-S-end    M-S-del
   M-S-grv     M-S-1      M-S-2      M-S-3      M-S-4      M-S-5      M-S-6      M-S-7      M-S-8      M-S-9      M-S-0       M-S--        M-S-=      M-S-bspc
-  M-S-tab     M-S-q      M-S-w      M-S-e      M-S-r      @M-S-t     M-S-y      M-S-u      M-S-i      M-S-o      M-S-p       M-S-[       M-S-]      M-S-\
+  M-S-tab     @M-S-q     @M-S-w     M-S-e      @M-S-r     @M-S-t     M-S-y      M-S-u      M-S-i      M-S-o      M-S-p       M-S-[       M-S-]      M-S-\
   M-S-caps    M-S-a      M-S-s      M-S-d      @M-S-f     M-S-g      @M-S-h     @M-S-j     @M-S-k     @M-S-l      M-S-;       M-S-'       M-S-ret
   M-S-lsft    M-S-z      M-S-x      M-S-c      M-S-v      M-S-b      M-S-n      M-S-m      M-S-,      M-S-.      M-S-/       M-S-rsft  
   M-S-lctl    M-S-lmet   M-S-lalt                         M-S-spc               M-S-ralt   M-S-menu   M-S-rctl  
