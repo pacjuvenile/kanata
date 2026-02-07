@@ -12,6 +12,41 @@
 )
 
 (defalias 
+  ;; 模拟win按下状态
+  lmet    (layer-while-held wined)
+  ;; 模拟win + shift按下状态
+  M-lsft  (layer-while-held wined-shifted)
+  ;; 模拟win + alt按下状态
+  M-lalt  (layer-while-held wined-alted)
+
+  ;; wm配置(only for windows)
+  ;; 启动/关闭
+  M-s     (cmd "glazewm" "start")
+  M-r     (cmd "glazewm" "command" "wm-reload-config")
+  M-q     (cmd "glazewm" "command" "wm-exit")
+
+  ;; 窗口管理
+  ;;M-t     (cmd "glazewm" "command" "toggle-tiling-direction")
+  M-t     (cmd "glazewm" "command" "toggle-tiling")
+  M-f     (cmd "glazewm" "command" "toggle-floating" "--centered")
+  M-S-f   (cmd "glazewm" "command" "toggle-fullscreen")   
+  M-c     (cmd "glazewm" "command" "close")
+  ;; 焦点转移
+  M-h     (cmd "glazewm" "command" "focus" "--direction" "left")
+  M-j     (cmd "glazewm" "command" "focus" "--direction" "down")
+  M-k     (cmd "glazewm" "command" "focus" "--direction" "up")
+  M-l     (cmd "glazewm" "command" "focus" "--direction" "right")
+  ;; 窗口调整
+  M-S-h   (cmd "glazewm" "command" "resize" "--width" "-2%")
+  M-S-j   (cmd "glazewm" "command" "resize" "--height" "-2%") 
+  M-S-k   (cmd "glazewm" "command" "resize" "--height" "+2%")
+  M-S-l   (cmd "glazewm" "command" "resize" "--width" "+2%")
+  ;; 位置移动 
+  M-A-h   (cmd "glazewm" "command" "move" "--direction" "left")
+  M-A-j   (cmd "glazewm" "command" "move" "--direction" "down") 
+  M-A-k   (cmd "glazewm" "command" "move" "--direction" "up")
+  M-A-l   (cmd "glazewm" "command" "move" "--direction" "right")
+
   ;; 短按esc,长按模拟ctrl
   caps    (tap-hold 200 200 esc lctl)
 
@@ -21,18 +56,13 @@
   A-lsft  (layer-while-held alted-shifted)
 
   ;; alt 按下的映射
-  A-y     (multi C-c)
-  A-p     (multi C-v)
-  A-h     (multi left)
-  A-j     (multi down)
-  A-k     (multi up)
-  A-l     (multi right)
-
-  ;; wm配置(windows)
-  wm-left (cmd "glazewm" "command" "focus" "--direction" "left")
-  wm-dowm (cmd "glazewm" "command" "focus" "--direction" "down")
-  wm-up (cmd "glazewm" "command" "focus" "--direction" "up")
-  wm-right (cmd "glazewm" "command" "focus" "--direction" "right")
+  A-t     (cmd "wez")
+  A-y     C-c
+  A-p     C-v
+  A-h     left
+  A-j     down
+  A-k     up
+  A-l     right
 )
 
 (deflayer base 
@@ -41,13 +71,40 @@
   tab     q     w     e     r     t     y     u     i     o     p     [     ]     \
   @caps   a     s     d     f     g     h     j     k     l     ;     '     ret
   lsft    z     x     c     v     b     n     m     ,     .     /     rsft  
-  lctl    lmet  @lalt             spc               ralt  menu  rctl  
+  lctl    @lmet  @lalt             spc               ralt  menu  rctl  
+)
+
+(deflayer wined 
+  M-esc     M-f1     M-f2     M-f3     M-f4    M-f5     M-f6      M-f7     M-f8     M-f9     M-f10      M-f11      M-f12      M-home     M-end      M-del
+  M-grv     M-1      M-2      M-3      M-4     M-5      M-6       M-7      M-8      M-9      M-0        M--        M-=        M-bspc
+  M-tab     @M-q     M-w      M-e      @M-r    @M-t     M-y       M-u      M-i      M-o      M-p        M-[        M-]        M-\
+  M-caps    M-a      @M-s     M-d      @M-f    M-g      @M-h      @M-j     @M-k     @M-l     M-;        M-'        M-ret
+  @M-lsft   M-z      M-x      @M-c     M-v     M-b      M-n       M-m      M-,      M-.      M-/        M-rsft  
+  M-lctl    M-lmet   @M-lalt                   M-spc                M-ralt   M-menu   M-rctl  
+)
+
+(deflayer wined-shifted 
+  M-S-esc     M-S-f1     M-S-f2     M-S-f3     M-S-f4     M-S-f5     M-S-f6     M-S-f7     M-S-f8     M-S-f9     M-S-f10     M-S-f11     M-S-f12    M-S-home   M-S-end    M-S-del
+  M-S-grv     M-S-1      M-S-2      M-S-3      M-S-4      M-S-5      M-S-6      M-S-7      M-S-8      M-S-9      M-S-0       M-S--        M-S-=      M-S-bspc
+  M-S-tab     M-S-q      M-S-w      M-S-e      M-S-r      M-S-t      M-S-y      M-S-u      M-S-i      M-S-o      M-S-p       M-S-[       M-S-]      M-S-\
+  M-S-caps    M-S-a      M-S-s      M-S-d      @M-S-f     M-S-g      @M-S-h     @M-S-j     @M-S-k     @M-S-l      M-S-;       M-S-'       M-S-ret
+  M-S-lsft    M-S-z      M-S-x      M-S-c      M-S-v      M-S-b      M-S-n      M-S-m      M-S-,      M-S-.      M-S-/       M-S-rsft  
+  M-S-lctl    M-S-lmet   M-S-lalt                         M-S-spc               M-S-ralt   M-S-menu   M-S-rctl  
+)
+
+(deflayer wined-alted 
+  M-A-esc     M-A-f1     M-A-f2     M-A-f3     M-A-f4    M-A-f5     M-A-f6      M-A-f7     M-A-f8     M-A-f9     M-A-f10      M-A-f11      M-A-f12      M-A-home     M-A-end      M-A-del
+  M-A-grv     M-A-1      M-A-2      M-A-3      M-A-4     M-A-5      M-A-6       M-A-7      M-A-8      M-A-9      M-A-0        M-A--        M-A-=        M-A-bspc
+  M-A-tab     M-A-q      M-A-w      M-A-e      M-A-r     M-A-t      M-A-y       M-A-u      M-A-i      M-A-o      M-A-p        M-A-[        M-A-]        M-A-\
+  M-A-caps    M-A-a      M-A-s      M-A-d      M-A-f     M-A-g      @M-A-h      @M-A-j     @M-A-k     @M-A-l     M-A-;        M-A-'        M-A-ret
+  M-A-lsft    M-A-z      M-A-x      M-A-c      M-A-v     M-A-b      M-A-n       M-A-m      M-A-,      M-A-.      M-A-/        M-A-rsft  
+  M-A-lctl    M-A-lmet   M-A-lalt                        M-A-spc                M-A-ralt   M-A-menu   M-A-rctl  
 )
 
 (deflayer alted
   A-esc     A-f1    A-f2    A-f3    A-f4    A-f5    A-f6    A-f7    A-f8    A-f9  A-f10     A-f11   A-f12   A-home  A-end   A-del
   A-grv     A-1     A-2     A-3     A-4     A-5     A-6     A-7     A-8     A-9     A-0       A--     A-=     A-bspc
-  A-tab    A-q     A-w     A-e     A-r     A-t     @A-y    A-u     A-i     A-o     @A-p      A-[     A-]     A-\
+  A-tab    A-q     A-w     A-e     A-r     @A-t     @A-y    A-u     A-i     A-o     @A-p      A-[     A-]     A-\
   A-caps    A-a     A-s     A-d     A-f     A-g     @A-h    @A-j    @A-k    @A-l    A-;       A-'     A-ret
   @A-lsft   A-z     A-x     A-c     A-v     A-b     A-n     A-m     A-,     A-.     A-/       rsft    
   A-lctl    A-lmet  A-lalt                  A-spc                   A-ralt  A-menu  A-rctl  
