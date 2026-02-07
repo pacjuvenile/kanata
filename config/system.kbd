@@ -100,7 +100,7 @@
   M-S-esc     M-S-f1     M-S-f2     M-S-f3     M-S-f4     M-S-f5     M-S-f6     M-S-f7     M-S-f8     M-S-f9     M-S-f10     M-S-f11     M-S-f12    M-S-home   M-S-end    M-S-del
   M-S-grv     M-S-1      M-S-2      M-S-3      M-S-4      M-S-5      M-S-6      M-S-7      M-S-8      M-S-9      M-S-0       M-S--        M-S-=      M-S-bspc
   M-S-tab     @M-S-q     @M-S-w     M-S-e      @M-S-r     @M-S-t     M-S-y      M-S-u      M-S-i      M-S-o      M-S-p       M-S-[       M-S-]      M-S-\
-  M-S-caps    M-S-a      M-S-s      M-S-d      @M-S-f     M-S-g      @M-S-h     @M-S-j     @M-S-k     @M-S-l      M-S-;       M-S-'       M-S-ret
+  M-S-caps    M-S-a      @M-S-s      M-S-d      @M-S-f     M-S-g      @M-S-h     @M-S-j     @M-S-k     @M-S-l      M-S-;       M-S-'       M-S-ret
   M-S-lsft    M-S-z      M-S-x      M-S-c      M-S-v      M-S-b      M-S-n      M-S-m      M-S-,      M-S-.      M-S-/       M-S-rsft  
   M-S-lctl    M-S-lmet   M-S-lalt                         M-S-spc               M-S-ralt   M-S-menu   M-S-rctl  
 )
