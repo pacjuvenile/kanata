@@ -70,13 +70,14 @@
   A-lsft  (layer-while-held alted-shifted)
 
   ;; alt 按下的映射
-  A-t     (cmd "wez")
   A-y     C-c
   A-p     C-v
   A-h     left
   A-j     down
   A-k     up
   A-l     right
+  ;; alt + shift按下的映射
+  A-S-t   (cmd "wez")
 )
 
 (deflayer base 
@@ -118,7 +119,7 @@
 (deflayer alted
   A-esc     A-f1    A-f2    A-f3    A-f4    A-f5    A-f6    A-f7    A-f8    A-f9  A-f10     A-f11   A-f12   A-home  A-end   A-del
   A-grv     A-1     A-2     A-3     A-4     A-5     A-6     A-7     A-8     A-9     A-0       A--     A-=     A-bspc
-  A-tab     A-q     A-w     A-e     A-r     @A-t    @A-y    A-u     A-i     A-o     @A-p      A-[     A-]     A-\
+  A-tab     A-q     A-w     A-e     A-r     A-t     @A-y    A-u     A-i     A-o     @A-p      A-[     A-]     A-\
   XX        A-a     A-s     A-d     A-f     A-g     @A-h    @A-j    @A-k    @A-l    A-;       A-'     A-ret
   @A-lsft   A-z     A-x     A-c     A-v     A-b     A-n     A-m     A-,     A-.     A-/       A-rsft    
   XX        XX      XX                      A-spc                   XX      XX      XX  
@@ -127,7 +128,7 @@
 (deflayer alted-shifted 
   A-S-esc     A-S-f1    A-S-f2    A-S-f3    A-S-f4    A-S-f5  A-S-f6      A-S-f7    A-S-f8    A-S-f9    A-S-f10   A-S-f11 A-S-f12     A-S-home  A-S-end   A-S-del
   A-S-grv     A-S-1     A-S-2     A-S-3     A-S-4     A-S-5   A-S-6       A-S-7     A-S-8     A-S-9     A-S-0     A-S--   A-S-=       A-S-bspc
-  A-S-tab     A-S-q     A-S-w     A-S-e     A-S-r     A-S-t   A-S-y       A-S-u     A-S-i     A-S-o     A-S-p     A-S-[   A-S-]       A-S-\
+  A-S-tab     A-S-q     A-S-w     A-S-e     A-S-r     @A-S-t  A-S-y       A-S-u     A-S-i     A-S-o     A-S-p     A-S-[   A-S-]       A-S-\
   XX     A-S-a     A-S-s     A-S-d     A-S-f     A-S-g   A-S-h       A-S-j     A-S-k     A-S-l     A-S-;     A-S-'   A-S-ret
   XX     A-S-z     A-S-x     A-S-c     A-S-v     A-S-b   A-S-n       A-S-m     A-S-,     A-S-.     A-S-/     XX  
   XX     XX        XX                            A-S-spc                       XX        XX        XX  
