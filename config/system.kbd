@@ -78,6 +78,12 @@
   A-l     right
   ;; alt + shift按下的映射
   A-S-t   (cmd "wez")
+
+  ;; 模拟shift按下的状态
+  lsft    (layer-while-held shifted)
+
+  ;; shift按下的映射
+  S-spc   C-spc 
 )
 
 (deflayer base 
@@ -85,7 +91,7 @@
   grv     1     2     3     4     5     6     7     8     9     0     -     =     bspc
   tab     q     w     e     r     t     y     u     i     o     p     [     ]     \
   @caps   a     s     d     f     g     h     j     k     l     ;     '     ret
-  lsft    z     x     c     v     b     n     m     ,     .     /     rsft  
+  @lsft    z     x     c     v     b     n     m     ,     .     /     rsft  
   lctl    @lmet  @lalt             spc               ralt  menu  rctl  
 )
 
@@ -132,4 +138,13 @@
   XX     A-S-a     A-S-s     A-S-d     A-S-f     A-S-g   A-S-h       A-S-j     A-S-k     A-S-l     A-S-;     A-S-'   A-S-ret
   XX     A-S-z     A-S-x     A-S-c     A-S-v     A-S-b   A-S-n       A-S-m     A-S-,     A-S-.     A-S-/     XX  
   XX     XX        XX                            A-S-spc                       XX        XX        XX  
+)
+
+(deflayer shifted
+  S-esc     S-f1    S-f2    S-f3    S-f4    S-f5    S-f6    S-f7    S-f8    S-f9    S-f10   S-f11   S-f12     S-home    S-end     S-del
+  S-grv     S-1     S-2     S-3     S-4     S-5     S-6     S-7     S-8     S-9     S-0     S--     S-=       S-bspc
+  S-tab     S-q     S-w     S-e     S-r     S-t     S-y     S-u     S-i     S-o     S-p     S-[     S-]       S-\
+  XX        S-a     S-s     S-d     S-f     S-g     S-h     S-j     S-k     S-l     S-;     S-'     S-ret
+  XX        S-z     S-x     S-c     S-v     S-b     S-n     S-m     S-,     S-.     S-/     XX  
+  XX        XX      XX                      @S-spc                  XX      XX      XX  
 )
