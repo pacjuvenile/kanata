@@ -77,6 +77,7 @@
   A-k     up
   A-l     right
   ;; alt + shift按下的映射
+  A-S-r   lrld
   A-S-t   (cmd "wez")
 
   ;; 模拟shift按下的状态
@@ -132,12 +133,12 @@
 )
 
 (deflayer alted-shifted 
-  A-S-esc     A-S-f1    A-S-f2    A-S-f3    A-S-f4    A-S-f5  A-S-f6      A-S-f7    A-S-f8    A-S-f9    A-S-f10   A-S-f11 A-S-f12     A-S-home  A-S-end   A-S-del
-  A-S-grv     A-S-1     A-S-2     A-S-3     A-S-4     A-S-5   A-S-6       A-S-7     A-S-8     A-S-9     A-S-0     A-S--   A-S-=       A-S-bspc
-  A-S-tab     A-S-q     A-S-w     A-S-e     A-S-r     @A-S-t  A-S-y       A-S-u     A-S-i     A-S-o     A-S-p     A-S-[   A-S-]       A-S-\
-  XX     A-S-a     A-S-s     A-S-d     A-S-f     A-S-g   A-S-h       A-S-j     A-S-k     A-S-l     A-S-;     A-S-'   A-S-ret
-  XX     A-S-z     A-S-x     A-S-c     A-S-v     A-S-b   A-S-n       A-S-m     A-S-,     A-S-.     A-S-/     XX  
-  XX     XX        XX                            A-S-spc                       XX        XX        XX  
+  A-S-esc     A-S-f1     A-S-f2    A-S-f3    A-S-f4    A-S-f5    A-S-f6      A-S-f7    A-S-f8    A-S-f9    A-S-f10   A-S-f11     A-S-f12     A-S-home  A-S-end   A-S-del
+  A-S-grv     A-S-1      A-S-2     A-S-3     A-S-4     A-S-5     A-S-6       A-S-7     A-S-8     A-S-9     A-S-0     A-S--   A-S-=       A-S-bspc
+  A-S-tab     A-S-q      A-S-w     A-S-e     @A-S-r    @A-S-t    A-S-y       A-S-u     A-S-i     A-S-o     A-S-p     A-S-[   A-S-]       A-S-\
+  XX          A-S-a      A-S-s     A-S-d     A-S-f     A-S-g     A-S-h       A-S-j     A-S-k     A-S-l     A-S-;     A-S-'   A-S-ret
+  XX          A-S-z      A-S-x     A-S-c     A-S-v     A-S-b     A-S-n       A-S-m     A-S-,     A-S-.     A-S-/     XX  
+  XX          XX         XX                            A-S-spc                       XX        XX        XX  
 )
 
 (deflayer shifted
