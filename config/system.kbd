@@ -85,6 +85,10 @@
 
   ;; shift按下的映射
   S-spc   C-spc 
+
+  ;; 鼠标模式
+  A-spc     (layer-switch mouse)
+  mouse-esc (layer-switch base)
 )
 
 (deflayer base 
@@ -92,7 +96,7 @@
   grv     1     2     3     4     5     6     7     8     9     0     -     =     bspc
   tab     q     w     e     r     t     y     u     i     o     p     [     ]     \
   @caps   a     s     d     f     g     h     j     k     l     ;     '     ret
-  @lsft    z     x     c     v     b     n     m     ,     .     /     rsft  
+  @lsft   z     x     c     v     b     n     m     ,     .     /     rsft
   lctl    @lmet  @lalt             spc               ralt  menu  rctl  
 )
 
@@ -129,7 +133,7 @@
   A-tab     A-q     A-w     A-e     A-r     A-t     @A-y    A-u     A-i     A-o     @A-p      A-[     A-]     A-\
   XX        A-a     A-s     A-d     A-f     A-g     @A-h    @A-j    @A-k    @A-l    A-;       A-'     A-ret
   @A-lsft   A-z     A-x     A-c     A-v     A-b     A-n     A-m     A-,     A-.     A-/       A-rsft    
-  XX        XX      XX                      A-spc                   XX      XX      XX  
+  XX        XX      XX                      @A-spc                  XX      XX      XX
 )
 
 (deflayer alted-shifted 
@@ -148,4 +152,13 @@
   XX        S-a     S-s     S-d     S-f     S-g     S-h     S-j     S-k     S-l     S-;     S-'     S-ret
   XX        S-z     S-x     S-c     S-v     S-b     S-n     S-m     S-,     S-.     S-/     XX  
   XX        XX      XX                      @S-spc                  XX      XX      XX  
+)
+
+(deflayer mouse
+  @mouse-esc  XX    XX    XX    XX    XX    XX    XX    XX    XX     XX     XX     XX    XX     XX     XX
+  XX          XX    XX    XX    XX    XX    XX    XX    XX    XX     XX     XX     XX    XX
+  XX          XX    XX    XX    XX    XX    XX    XX    XX    XX     XX     XX     XX    XX
+  @mouse-esc  XX      XX    XX    XX    XX    XX    XX    XX    XX     XX     XX     XX
+  XX          XX      XX    XX    XX    XX    XX    XX    XX    XX     XX     XX
+  XX          XX      XX                XX                XX    XX     XX
 )
