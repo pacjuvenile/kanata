@@ -90,19 +90,19 @@
   ;; 鼠标模式
   A-spc		(layer-switch mouse)
   m-caps	(layer-switch base)
-  m-h		(movemouse-accel-left   16 800 1 25)
-  m-j		(movemouse-accel-down   16 800 1 25)
-  m-k		(movemouse-accel-up     16 800 1 25)
-  m-l		(movemouse-accel-right  16 800 1 25)
-  m-,		mmid
-  m-.		mlft
-  m-/		mrgt
-  ;;  滚轮模式
-  m-lsft	(layer-while-held mwheel)
-  mw-h		(mwheel-accel-left   3 1200 1.15 0.93)
-  mw-j		(mwheel-accel-down   3 1200 1.15 0.93)
-  mw-k		(mwheel-accel-up     3 1200 1.15 0.93)
-  mw-l		(mwheel-accel-right  3 1200 1.15 0.93)
+  m-w		(movemouse-accel-up     16 800 1 25)
+  m-a		(movemouse-accel-left   16 800 1 25)
+  m-s		(movemouse-accel-down   16 800 1 25)
+  m-d		(movemouse-accel-right  16 800 1 25)
+  m-h		mlft
+  m-j		(mwheel-accel-down   3 1200 1.15 0.93)
+  m-k		(mwheel-accel-up     3 1200 1.15 0.93)
+  m-l		mrgt
+  m-m		mmid
+  ;;  鼠标模式下shift按下
+  m-lsft	(layer-while-held mshifted)
+  m-S-j		(mwheel-accel-left   3 1200 1.15 0.93)
+  m-S-k		(mwheel-accel-right  3 1200 1.15 0.93)
 )
 
 (deflayer base 
@@ -171,17 +171,17 @@
 (deflayer mouse
   esc		XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   XX		XX	XX	XX	XX	XX	XX     	XX	XX	XX	XX	XX	XX	XX
-  XX		XX	w	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  @m-caps	a	s	d	XX	XX	@m-h	@m-j	@m-k	@m-l	XX	XX	XX
-  @m-lsft	XX	XX	XX	XX	XX	XX	XX	@m-,	@m-.	@m-/	XX
+  XX		XX	@m-w	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+  @m-caps	@m-a	@m-s	@m-d	XX	XX	@m-h	@m-j	@m-k	@m-l	XX	XX	XX
+  @m-lsft	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   XX		XX	XX			XX			XX	XX	XX
 )
 
-(deflayer mwheel
+(deflayer mshifted
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   XX	XX	XX	XX	XX	XX	XX     	XX	XX	XX	XX	XX	XX	XX
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  XX	XX	XX	XX	XX	XX	@mw-h	@mw-j	@mw-k	@mw-l	XX	XX	XX
+  XX	XX	XX	XX	XX	XX	XX	@m-S-j	@m-S-k	XX	XX	XX	XX
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   XX	XX	XX			XX			XX	XX	XX	
 )
