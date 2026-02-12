@@ -1,99 +1,99 @@
 (defcfg 
-  movemouse-inherit-accel-state yes
-  danger-enable-cmd yes
+  movemouse-inherit-accel-state	yes
+  danger-enable-cmd		yes
 )
 
 (defsrc 
-  esc     f1    f2    f3    f4    f5    f6    f7    f8    f9  f10     f11   f12   home  end   del
-  grv     1     2     3     4     5     6     7     8     9     0     -     =     bspc
-  tab     q     w     e     r     t     y     u     i     o     p     [     ]     \
-  caps    a     s     d     f     g     h     j     k     l     ;     '     ret
-  lsft    z     x     c     v     b     n     m     ,     .     /     rsft  
-  lctl    lmet  lalt              spc               ralt  menu  rctl  
+  esc	f1	f2	f3	f4	f5	f6	f7	f8	f9	f10	f11	f12	home	end	del
+  grv	1	2     	3	4	5	6	7	8	9	0	-	= 	bspc
+  tab	q	w     	e	r	t	y	u	i	o	p	[	]	\
+  caps	a	s     	d	f	g	h	j	k	l	;	'	ret
+  lsft	z	x     	c	v	b	n	m	,	.	/	rsft  
+  lctl	lmet	lalt			spc			ralt	menu	rctl  
 )
 
 (defalias 
   ;; 模拟win按下状态
-  lmet    (layer-while-held wined)
+  lmet		(layer-while-held wined)
   ;; 模拟win + shift按下状态
-  M-lsft  (layer-while-held wined-shifted)
+  M-lsft	(layer-while-held wined-shifted)
   ;; 模拟win + alt按下状态
-  M-lalt  (layer-while-held wined-alted)
+  M-lalt	(layer-while-held wined-alted)
 
   ;; wm配置(only for windows)
   ;; 启动/关闭
-  M-S-s   (cmd "glazewm" "start")
-  M-S-r   (cmd "glazewm" "command" "wm-reload-config")
-  M-S-q   (cmd "glazewm" "command" "wm-exit")
+  M-S-s		(cmd "glazewm" "start")
+  M-S-r		(cmd "glazewm" "command" "wm-reload-config")
+  M-S-q		(cmd "glazewm" "command" "wm-exit")
 
   ;; 焦点转移
-  M-h     (cmd "glazewm" "command" "focus" "--direction" "left")
-  M-j     (cmd "glazewm" "command" "focus" "--direction" "down")
-  M-k     (cmd "glazewm" "command" "focus" "--direction" "up")
-  M-l     (cmd "glazewm" "command" "focus" "--direction" "right")
+  M-h		(cmd "glazewm" "command" "focus" "--direction" "left")
+  M-j		(cmd "glazewm" "command" "focus" "--direction" "down")
+  M-k		(cmd "glazewm" "command" "focus" "--direction" "up")
+  M-l		(cmd "glazewm" "command" "focus" "--direction" "right")
   ;; 宽高调整
-  M-S-h	  (cmd "glazewm" "command" "resize" "--width" "-2%")
-  M-S-j   (cmd "glazewm" "command" "resize" "--height" "-2%") 
-  M-S-k   (cmd "glazewm" "command" "resize" "--height" "+2%")
-  M-S-l   (cmd "glazewm" "command" "resize" "--width" "+2%")
+  M-S-h		(cmd "glazewm" "command" "resize" "--width" "-2%")
+  M-S-j		(cmd "glazewm" "command" "resize" "--height" "-2%") 
+  M-S-k		(cmd "glazewm" "command" "resize" "--height" "+2%")
+  M-S-l		(cmd "glazewm" "command" "resize" "--width" "+2%")
   ;; 位置移动 
-  M-A-h   (cmd "glazewm" "command" "move" "--direction" "left")
-  M-A-j   (cmd "glazewm" "command" "move" "--direction" "down") 
-  M-A-k   (cmd "glazewm" "command" "move" "--direction" "up")
-  M-A-l   (cmd "glazewm" "command" "move" "--direction" "right")
+  M-A-h		(cmd "glazewm" "command" "move" "--direction" "left")
+  M-A-j		(cmd "glazewm" "command" "move" "--direction" "down") 
+  M-A-k		(cmd "glazewm" "command" "move" "--direction" "up")
+  M-A-l		(cmd "glazewm" "command" "move" "--direction" "right")
   ;; 窗口管理
-  M-t     (cmd "glazewm" "command" "toggle-tiling")
-  M-f     (cmd "glazewm" "command" "toggle-floating" "--centered")
-  M-m     (cmd "glazewm" "command" "set-minimized")
-  M-S-w   (cmd "glazewm" "command" "close")
-  M-S-f   (cmd "glazewm" "command" "toggle-fullscreen")   
-  M-S-t   (cmd "glazewm" "command" "toggle-tiling-direction")
+  M-t		(cmd "glazewm" "command" "toggle-tiling")
+  M-f		(cmd "glazewm" "command" "toggle-floating" "--centered")
+  M-m		(cmd "glazewm" "command" "set-minimized")
+  M-S-w		(cmd "glazewm" "command" "close")
+  M-S-f		(cmd "glazewm" "command" "toggle-fullscreen")   
+  M-S-t		(cmd "glazewm" "command" "toggle-tiling-direction")
   ;; 工作区调整
-  M-n     (cmd "glazewm" "command" "focus" "--next-active-workspace")
-  M-p     (cmd "glazewm" "command" "focus" "--prev-active-workspace")
-  M-1     (cmd "glazewm" "command" "focus" "--workspace" "gui")
-  M-2     (cmd "glazewm" "command" "focus" "--workspace" "doc")
-  M-3     (cmd "glazewm" "command" "focus" "--workspace" "code")
-  M-4     (cmd "glazewm" "command" "focus" "--workspace" "dev")
-  M-5     (cmd "glazewm" "command" "focus" "--workspace" "video")
-  M-6     (cmd "glazewm" "command" "focus" "--workspace" "aux1")
-  M-7     (cmd "glazewm" "command" "focus" "--workspace" "aux2")
-  M-8     (cmd "glazewm" "command" "focus" "--workspace" "demo1")
-  M-9     (cmd "glazewm" "command" "focus" "--workspace" "demo2")
-  M-0     (cmd "glazewm" "command" "focus" "--recent-workspace")
+  M-n		(cmd "glazewm" "command" "focus" "--next-active-workspace")
+  M-p		(cmd "glazewm" "command" "focus" "--prev-active-workspace")
+  M-1		(cmd "glazewm" "command" "focus" "--workspace" "gui")
+  M-2		(cmd "glazewm" "command" "focus" "--workspace" "doc")
+  M-3		(cmd "glazewm" "command" "focus" "--workspace" "code")
+  M-4		(cmd "glazewm" "command" "focus" "--workspace" "dev")
+  M-5		(cmd "glazewm" "command" "focus" "--workspace" "video")
+  M-6		(cmd "glazewm" "command" "focus" "--workspace" "aux1")
+  M-7		(cmd "glazewm" "command" "focus" "--workspace" "aux2")
+  M-8		(cmd "glazewm" "command" "focus" "--workspace" "demo1")
+  M-9		(cmd "glazewm" "command" "focus" "--workspace" "demo2")
+  M-0		(cmd "glazewm" "command" "focus" "--recent-workspace")
 
   ;; 短按esc,长按模拟ctrl
-  caps    (tap-hold 200 200 esc lctl)
+  caps		(tap-hold 200 200 esc lctl)
 
   ;; 模拟alt按下状态
-  lalt    (layer-while-held alted)
+  lalt		(layer-while-held alted)
   ;; 模拟alt + shift按下状态
-  A-lsft  (layer-while-held alted-shifted)
+  A-lsft	(layer-while-held alted-shifted)
 
   ;; alt 按下的映射
-  A-y     C-c
-  A-p     C-v
-  A-h     left
-  A-j     down
-  A-k     up
-  A-l     right
+  A-y		C-c
+  A-p		C-v
+  A-h		left
+  A-j		down
+  A-k		up
+  A-l		right
   ;; alt + shift按下的映射
-  A-S-r   lrld
-  A-S-t   (cmd "wez")
+  A-S-r		lrld
+  A-S-t		(cmd "wez")
 
   ;; 模拟shift按下的状态
-  lsft    (layer-while-held shifted)
+  lsft		(layer-while-held shifted)
 
   ;; shift按下的映射
-  S-spc   C-spc 
+  S-spc   	C-spc 
 
   ;; 鼠标模式
-  A-spc     (layer-switch mouse)
-  m-esc     (layer-switch base)
-  m-h       (movemouse-accel-left   16 800 1 25)
-  m-j       (movemouse-accel-down   16 800 1 25)
-  m-k       (movemouse-accel-up     16 800 1 25)
-  m-l       (movemouse-accel-right  16 800 1 25)
+  A-spc		(layer-switch mouse)
+  m-esc		(layer-switch base)
+  m-h		(movemouse-accel-left   16 800 1 25)
+  m-j		(movemouse-accel-down   16 800 1 25)
+  m-k		(movemouse-accel-up     16 800 1 25)
+  m-l		(movemouse-accel-right  16 800 1 25)
 )
 
 (deflayer base 
