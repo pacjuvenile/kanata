@@ -90,19 +90,20 @@
   ;; 鼠标模式
   A-spc		(layer-switch mouse)
   m-caps	(layer-switch base)
-  m-w		(movemouse-accel-up     16 800 1 25)
-  m-a		(movemouse-accel-left   16 800 1 25)
-  m-s		(movemouse-accel-down   16 800 1 25)
-  m-d		(movemouse-accel-right  16 800 1 25)
+  m-w		(movemouse-accel-up     20 1000 3 10)
+  m-a		(movemouse-accel-left   20 1000 3 10)
+  m-s		(movemouse-accel-down   20 1000 3 10)
+  m-d		(movemouse-accel-right  20 1000 3 10)
   m-h		mlft
-  m-j		(mwheel-accel-down   3 1200 1.15 0.93)
-  m-k		(mwheel-accel-up     3 1200 1.15 0.93)
+  m-j		(mwheel-down 100 60)
+  m-k		(mwheel-up 100 60)
   m-l		mrgt
   m-m		mmid
+  m-ret		(multi mltp (layer-switch base))
   ;;  鼠标模式下shift按下
   m-lsft	(layer-while-held mshifted)
-  m-S-j		(mwheel-accel-left   3 1200 1.15 0.93)
-  m-S-k		(mwheel-accel-right  3 1200 1.15 0.93)
+  m-S-h		(mwheel-left 100 60)
+  m-S-l		(mwheel-right 100 60)
 )
 
 (deflayer base 
@@ -163,25 +164,25 @@
   S-esc     S-f1    S-f2    S-f3    S-f4    S-f5    S-f6    S-f7    S-f8    S-f9    S-f10   S-f11   S-f12     S-home    S-end     S-del
   S-grv     S-1     S-2     S-3     S-4     S-5     S-6     S-7     S-8     S-9     S-0     S--     S-=       S-bspc
   S-tab     S-q     S-w     S-e     S-r     S-t     S-y     S-u     S-i     S-o     S-p     S-[     S-]       S-\
-  XX        S-a     S-s     S-d     S-f     S-g     S-h     S-j     S-k     S-l     S-;     S-'     S-ret
+  @caps		S-a     S-s     S-d     S-f     S-g     S-h     S-j     S-k     S-l     S-;     S-'     S-ret
   XX        S-z     S-x     S-c     S-v     S-b     S-n     S-m     S-,     S-.     S-/     XX  
   XX        XX      XX                      @S-spc                  XX      XX      XX  
 )
 
 (deflayer mouse
-  esc		XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  XX		XX	XX	XX	XX	XX	XX     	XX	XX	XX	XX	XX	XX	XX
-  XX		XX	@m-w	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  @m-caps	@m-a	@m-s	@m-d	XX	XX	@m-h	@m-j	@m-k	@m-l	XX	XX	XX
+  esc		f1	f2	f3	f4	f5	f6	f7	f8	f9	f10	f11	f12	home	end	del
+  grv		1	2	3	4	5	6     	7	8	9	0	-	=	bspc
+  tab		XX	@m-w	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+  @m-caps	@m-a	@m-s	@m-d	XX	XX	@m-h	@m-j	@m-k	@m-l	XX	XX	@m-ret
   @m-lsft	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  XX		XX	XX			XX			XX	XX	XX
+  lctl		lmet	lalt			spc			ralt	menu	rctl
 )
 
 (deflayer mshifted
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   XX	XX	XX	XX	XX	XX	XX     	XX	XX	XX	XX	XX	XX	XX
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  XX	XX	XX	XX	XX	XX	XX	@m-S-j	@m-S-k	XX	XX	XX	XX
+  XX	XX	XX	XX	XX	XX	@m-S-h	XX	XX	@m-S-l	XX	XX	XX
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   XX	XX	XX			XX			XX	XX	XX	
 )
