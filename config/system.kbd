@@ -1,4 +1,5 @@
 (defcfg 
+  movemouse-inherit-accel-state yes
   danger-enable-cmd yes
 )
 
@@ -31,7 +32,7 @@
   M-k     (cmd "glazewm" "command" "focus" "--direction" "up")
   M-l     (cmd "glazewm" "command" "focus" "--direction" "right")
   ;; 宽高调整
-  M-S-h   (cmd "glazewm" "command" "resize" "--width" "-2%")
+  M-S-h	  (cmd "glazewm" "command" "resize" "--width" "-2%")
   M-S-j   (cmd "glazewm" "command" "resize" "--height" "-2%") 
   M-S-k   (cmd "glazewm" "command" "resize" "--height" "+2%")
   M-S-l   (cmd "glazewm" "command" "resize" "--width" "+2%")
@@ -88,16 +89,20 @@
 
   ;; 鼠标模式
   A-spc     (layer-switch mouse)
-  mouse-esc (layer-switch base)
+  m-esc     (layer-switch base)
+  m-h       (movemouse-accel-left   16 800 1 25)
+  m-j       (movemouse-accel-down   16 800 1 25)
+  m-k       (movemouse-accel-up     16 800 1 25)
+  m-l       (movemouse-accel-right  16 800 1 25)
 )
 
 (deflayer base 
-  esc     f1    f2    f3    f4    f5    f6    f7    f8    f9  f10     f11   f12   home  end   del
-  grv     1     2     3     4     5     6     7     8     9     0     -     =     bspc
-  tab     q     w     e     r     t     y     u     i     o     p     [     ]     \
-  @caps   a     s     d     f     g     h     j     k     l     ;     '     ret
-  @lsft   z     x     c     v     b     n     m     ,     .     /     rsft
-  lctl    @lmet  @lalt             spc               ralt  menu  rctl  
+  esc     f1      f2      f3      f4      f5      f6      f7      f8      f9      f10     f11     f12     home      end     del
+  grv     1       2       3       4       5       6       7       8       9       0         -     =       bspc
+  tab     q       w       e       r       t       y       u       i       o       p         [     ]       \
+  @caps   a       s       d       f       g       h       j       k       l       ;         '     ret
+  @lsft   z       x       c       v       b       n       m       ,       .       /         rsft
+  lctl    @lmet   @lalt                   spc                     ralt    menu    rctl  
 )
 
 (deflayer wined 
@@ -155,10 +160,10 @@
 )
 
 (deflayer mouse
-  @mouse-esc  XX    XX    XX    XX    XX    XX    XX    XX    XX     XX     XX     XX    XX     XX     XX
-  XX          XX    XX    XX    XX    XX    XX    XX    XX    XX     XX     XX     XX    XX
-  XX          XX    XX    XX    XX    XX    XX    XX    XX    XX     XX     XX     XX    XX
-  @mouse-esc  XX      XX    XX    XX    XX    XX    XX    XX    XX     XX     XX     XX
-  XX          XX      XX    XX    XX    XX    XX    XX    XX    XX     XX     XX
-  XX          XX      XX                XX                XX    XX     XX
+  @m-esc        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX
+  XX        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX
+  XX        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX        XX
+  @m-esc    XX        XX        XX        XX        XX        @m-h      @m-j      @m-k      @m-l      XX        XX        XX
+  XX        XX        XX	XX        XX        XX        XX        XX        XX        XX        XX        XX
+  XX        XX        XX                            XX                            XX        XX        XX
 )
