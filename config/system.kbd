@@ -97,6 +97,12 @@
   m-,		mmid
   m-.		mlft
   m-/		mrgt
+  ;;  滚轮模式
+  m-lsft	(layer-while-held mwheel)
+  mw-h		(mwheel-accel-left   3 1200 1.15 0.93)
+  mw-j		(mwheel-accel-down   3 1200 1.15 0.93)
+  mw-k		(mwheel-accel-up     3 1200 1.15 0.93)
+  mw-l		(mwheel-accel-right  3 1200 1.15 0.93)
 )
 
 (deflayer base 
@@ -167,6 +173,15 @@
   XX		XX	XX	XX	XX	XX	XX     	XX	XX	XX	XX	XX	XX	XX
   XX		XX	w	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   @m-caps	a	s	d	XX	XX	@m-h	@m-j	@m-k	@m-l	XX	XX	XX
-  XX		XX	XX	XX	XX	XX	XX	XX	@m-,	@m-.	@m-/	XX
+  @m-lsft	XX	XX	XX	XX	XX	XX	XX	@m-,	@m-.	@m-/	XX
   XX		XX	XX			XX			XX	XX	XX
+)
+
+(deflayer mwheel
+  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+  XX	XX	XX	XX	XX	XX	XX     	XX	XX	XX	XX	XX	XX	XX
+  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+  XX	XX	XX	XX	XX	XX	@mw-h	@mw-j	@mw-k	@mw-l	XX	XX	XX
+  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+  XX	XX	XX			XX			XX	XX	XX	
 )
