@@ -103,8 +103,6 @@
   ;;  鼠标模式下shift按下
   m-lsft	(layer-while-held mshifted)
   m-S-h		(mwheel-left 100 60)
-  m-S-j		(mwheel-accel-down 3 1000 1.10 0.90)
-  m-S-k		(mwheel-accel-up 3 1000 1.10 0.90)
   m-S-l		(mwheel-right 100 60)
 )
 
@@ -184,7 +182,7 @@
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   XX	XX	XX	XX	XX	XX	XX     	XX	XX	XX	XX	XX	XX	XX
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  XX	XX	XX	XX	XX	XX	@m-S-h	@m-S-l	@m-S-k	@m-S-l	XX	XX	XX
+  XX	XX	XX	XX	XX	XX	@m-S-h	XX	XX	@m-S-l	XX	XX	XX
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   XX	XX	XX			XX			XX	XX	XX	
 )
