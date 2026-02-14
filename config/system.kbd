@@ -88,7 +88,7 @@
 
   ;; 鼠标模式
   A-spc		(layer-switch mouse)
-  m-caps	(layer-switch base)
+  m-caps	(tap-hold 200 200 (layer-switch base) lctl)
   m-w		(movemouse-accel-up     20 1000 3 10)
   m-a		(movemouse-accel-left   20 1000 3 10)
   m-s		(movemouse-accel-down   20 1000 3 10)
