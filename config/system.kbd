@@ -122,7 +122,7 @@
   M-tab	M-q	M-w	M-e	M-r	@M-t	M-y	M-u	M-i	M-o	@M-p	M-[	M-]	M-\
   M-lctl	M-a	M-s	M-d	@M-f	M-g	@M-h	@M-j	@M-k	@M-l	M-;	M-'	M-ret
   @M-lsft	M-z	M-x	M-c	M-v	M-b	@M-n	@M-m	M-,	M-.	M-/	M-rsft
-  M-lctl	XX	@M-lalt			M-spc			M-ralt	XX	XX  
+  M-lctl	XX	@M-lalt			M-spc			M-ralt	XX	XX
 )
 
 (deflayer wined-alted 
@@ -130,8 +130,7 @@
   M-A-grv	M-A-1	M-A-2	M-A-3	M-A-4	M-A-5	M-A-6	M-A-7	M-A-8	M-A-9	M-A-0	M-A--	M-A-=	M-A-bspc
   M-A-tab	M-A-q	M-A-w	M-A-e	M-A-r	M-A-t	M-A-y	M-A-u	M-A-i	M-A-o	M-A-p	M-A-[	M-A-]	M-A-\
   XX	M-A-a	M-A-s	M-A-d	M-A-f	M-A-g	@M-A-h	@M-A-j	@M-A-k	@M-A-l	M-A-;	M-A-'	M-A-ret
-  M-A-lsft
-  M-A-z	M-A-x	M-A-c	M-A-v	M-A-b	M-A-n	M-A-m	M-A-,	M-A-.	M-A-/	M-A-rsft
+  M-A-lsft	M-A-z	M-A-x	M-A-c	M-A-v	M-A-b	M-A-n	M-A-m	M-A-,	M-A-.	M-A-/	M-A-rsft
   XX	XX	XX			M-A-spc			XX	XX	XX  
 )
 
@@ -186,5 +185,5 @@
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   XX	XX	XX	XX	XX	XX	@m-S-h	@m-S-j	@m-S-k	@m-S-l	XX	XX	XX
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  XX	XX	XX			XX			XX	XX	XX	
+  XX	XX	XX			XX			XX	XX	XX
 )
