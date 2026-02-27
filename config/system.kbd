@@ -176,7 +176,7 @@
   tab	XX	@m-w	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   @caps	@m-a	@m-s	@m-d	XX	XX	@m-h	@m-j	@m-k	@m-l	XX	XX	@m-ret
   @m-lsft	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  lctl	@lmet	@m-lalt					XX			ralt	menu	rctl
+  lctl	@lmet	@lalt					XX			ralt	menu	rctl
 )
 
 (deflayer mshifted
