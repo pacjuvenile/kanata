@@ -92,8 +92,8 @@
   S-spc	C-spc 
 
   ;; 鼠标模式
-  A-spc	(layer-switch mouse)
-	A-caps	(layer-switch base)
+  A-spc	(multi f24 (layer-switch mouse))
+	A-caps	(multi (layer-switch base) f24)
   m-w	(movemouse-accel-up     20 1000 3 10)
   m-a	(movemouse-accel-left   20 1000 3 10)
   m-s	(movemouse-accel-down   20 1000 3 10)
@@ -215,7 +215,7 @@
   esc	A-f1	f2	A-f3	f4	f5	f6	f7	f8	f9	f10	f11	f12	home	end	del
   grv	1	2	3	4	5	6	7	8	9	0	-	=	bspc
   tab	XX	@m-w	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  @caps	@m-a	@m-s	@m-d	XX	XX	@m-h	@m-j	@m-k	@m-l	XX	XX	@m-ret
+  lctl	@m-a	@m-s	@m-d	XX	XX	@m-h	@m-j	@m-k	@m-l	XX	XX	@m-ret
   @m-lsft	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   lctl	@lmet	@lalt					XX			ralt	menu	rctl
 )
