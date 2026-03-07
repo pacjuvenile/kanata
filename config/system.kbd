@@ -86,7 +86,7 @@
 	A-S-p	C-S-v
 
   ;; 模拟shift按下的状态
-  lsft	(layer-while-held shifted)
+  lsft	(multi f24 (layer-while-held shifted))
 
   ;; shift按下的映射
   S-spc	C-spc 
