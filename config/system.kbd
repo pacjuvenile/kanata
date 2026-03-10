@@ -83,10 +83,10 @@
   A-S-t	(cmd "wez")
 
   ;; 模拟shift按下的状态
-  lsft	(multi (layer-while-held shifted))
+  lsft	(multi f24 (layer-while-held shifted))
 
   ;; shift按下的映射
-  S-spc	f24 
+  S-spc	C-spc
 
   ;; 鼠标模式
   A-spc	(multi f24 (layer-switch mouse))
