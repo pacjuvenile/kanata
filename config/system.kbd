@@ -87,7 +87,7 @@
   lsft	(multi (layer-while-held shifted))
 
   ;; shift按下的映射
-  S-spc	C-spc 
+  S-spc	f24 
 
   ;; 鼠标模式
   A-spc	(multi f24 (layer-switch mouse))
