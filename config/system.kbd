@@ -63,6 +63,7 @@
 
   ;; 短按esc,长按模拟ctrl
   caps	(tap-hold 200 200 esc (layer-while-held ctrled))
+	C-g	(multi f24 C-g)
 	C-lsft	(layer-while-held ctrled-shifted)
 	C-lalt	(layer-while-held ctrled-alted)
 	C-A-lsft	(layer-while-held ctrled-alted-shifted)
@@ -151,7 +152,7 @@
 	C-esc	C-f1	C-f2	C-f3	C-f4	C-f5	C-f6	C-f7	C-f8	C-f9	C-f10	C-f11	C-f12	C-home	C-end	C-del
 	C-grv	C-1	C-2	C-3	C-4	C-5	C-6	C-7	C-8	C-9	C-0	C--	C-=	C-bspc
 	C-tab	C-q	C-w	C-e	C-r	C-t	C-y	C-u	C-i	C-o	C-p	C-[	C-]	C-\
-	XX	C-a	C-s	C-d	C-f	C-g	C-h	C-j	C-k	C-l	C-;	C-'	C-ret
+	XX	C-a	C-s	C-d	C-f	@C-g	C-h	C-j	C-k	C-l	C-;	C-'	C-ret
 	@C-lsft	C-z	C-x	C-c	C-v	C-b	C-n	C-m	C-,	C-.	C-/	C-rsft
 	XX	XX	@C-lalt			C-spc	XX	XX	XX
 )
