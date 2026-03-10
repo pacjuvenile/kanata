@@ -63,7 +63,7 @@
 
   ;; 短按esc,长按模拟ctrl
   caps	(tap-hold 200 200 esc (layer-while-held ctrled))
-	C-g	(multi f24 C-g)
+	C-g	(multi C-g)
 	C-lsft	(layer-while-held ctrled-shifted)
 	C-lalt	(layer-while-held ctrled-alted)
 	C-A-lsft	(layer-while-held ctrled-alted-shifted)
@@ -84,7 +84,7 @@
   A-S-t	(cmd "wez")
 
   ;; 模拟shift按下的状态
-  lsft	(multi f24 (layer-while-held shifted))
+  lsft	(multi (layer-while-held shifted))
 
   ;; shift按下的映射
   S-spc	C-spc 
