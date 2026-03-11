@@ -62,7 +62,7 @@
   M-0	(cmd "glazewm" "command" "focus" "--recent-workspace")
 
   ;; 短按esc,长按模拟ctrl
-  caps	(tap-hold 200 200 esc (layer-while-held ctrled))
+  caps	(multi f24 (tap-hold 200 200 esc (layer-while-held ctrled)))
 	C-lsft	(layer-while-held ctrled-shifted)
 	C-lalt	(layer-while-held ctrled-alted)
 	C-A-lsft	(layer-while-held ctrled-alted-shifted)
