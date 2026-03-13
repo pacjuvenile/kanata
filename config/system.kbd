@@ -90,7 +90,7 @@
 
   ;; 鼠标模式
   A-spc	(multi f24 (layer-switch mouse))
-	A-caps	(multi (layer-switch base) f24)
+	m-caps	(multi (layer-switch base) f24)
 	m-y	C-c
 	m-p	(multi (layer-switch base) C-v)
   m-w	(movemouse-accel-up     20 1000 3 10)
@@ -187,7 +187,7 @@
   A-esc	A-f1	A-f2	A-f3	A-f4	A-f5	A-f6	A-f7	A-f8	A-f9	A-f10	A-f11	A-f12	A-home	A-end	A-del
   A-grv	A-1	A-2	A-3	A-4	A-5	A-6	A-7	A-8	A-9	A-0	A--	A-=	A-bspc
   A-tab	A-q	A-w	A-e	@A-r	A-t	A-y	A-u	A-i	A-o	A-p	A-[	A-]	A-\
-  @A-caps	A-a	A-s	A-d	A-f	A-g	@A-h	@A-j	@A-k	@A-l	A-;	A-'	A-ret
+  XX	A-a	A-s	A-d	A-f	A-g	@A-h	@A-j	@A-k	@A-l	A-;	A-'	A-ret
   @A-lsft	A-z	A-x	A-c	A-v	A-b	A-n	A-m	A-,	A-.	A-/	A-rsft
   XX	XX	XX			@A-spc	XX	XX	XX
 )
@@ -214,7 +214,7 @@
   esc	A-f1	f2	A-f3	f4	f5	f6	f7	f8	f9	f10	f11	f12	home	end	del
   grv	1	2	3	4	5	6	7	8	9	0	-	=	bspc
   tab	XX	@m-w	XX	XX	XX	@m-y	XX	XX	XX	@m-p	XX	XX	XX
-  lctl	@m-a	@m-s	@m-d	XX	XX	@m-h	@m-j	@m-k	@m-l	XX	XX	@m-ret
+  @m-caps	@m-a	@m-s	@m-d	XX	XX	@m-h	@m-j	@m-k	@m-l	XX	XX	@m-ret
   @m-lsft	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   lctl	@lmet	@lalt					XX			ralt	menu	rctl
 )
