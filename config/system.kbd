@@ -37,11 +37,12 @@
   M-S-k	(cmd "komorebic" "move" "up")
   M-S-l	(cmd "komorebic" "move" "right")
 
-  ;; 宽高调整
-  ;; M-S-h	(cmd "komorebic" "resize-axis" "horizontal" "decrease")
-  ;; M-S-j	(cmd "komorebic" "resize-axis" "vertical" "decrease") 
-  ;; M-S-k	(cmd "komorebic" "resize-axis" "vertical" "increase")
-  ;; M-S-l	(cmd "komorebic" "resize-axis" "horizontal" "increase")
+	;; 尺寸调整
+	M-S-r	(layer-while-held resize)
+	rz_h	(cmd "komorebic" "resize-axis" "horizontal" "decrease")
+	rz_j	(cmd "komorebic" "resize-axis" "vertical" "decrease")
+	rz_k	(cmd "komorebic" "resize-axis" "vertical" "increase")
+	rz_l	(cmd "komorebic" "resize-axis" "horizontal" "increase")
 
   ;; 窗口管理
   M-f	(cmd "komorebic" "toggle-float")
@@ -153,10 +154,19 @@
 (deflayer wined-shifted 
   M-S-esc	M-S-f1	M-S-f2	M-S-f3	M-S-f4	M-S-f5	M-S-f6	M-S-f7	M-S-f8	M-S-f9	M-S-f10	M-S-f11	M-S-f12	M-S-home	M-S-end	M-S-del
   M-S-grv	@M-S-1	@M-S-2	@M-S-3	@M-S-4	@M-S-5	@M-S-6	@M-S-7	@M-S-8	@M-S-9	M-S-0	M-S--	M-S-=	M-S-bspc
-  M-S-tab	@M-S-q	M-S-w	M-S-e	M-S-r	M-S-t	M-S-y	M-S-u	M-S-i	M-S-o	M-S-p	M-S-[	M-S-]	M-S-\
+  M-S-tab	@M-S-q	M-S-w	M-S-e	@M-S-r	M-S-t	M-S-y	M-S-u	M-S-i	M-S-o	M-S-p	M-S-[	M-S-]	M-S-\
   XX	M-S-a	@M-S-s	M-S-d	@M-S-f	M-S-g	@M-S-h	@M-S-j	@M-S-k	@M-S-l	M-S-;	M-S-'	M-S-ret
   XX	M-S-z	M-S-x	M-S-c	M-S-v	M-S-b	M-S-n	M-S-m	M-S-,	M-S-.	M-S-/	XX
   XX	XX	XX			M-S-spc			XX	XX	XX  
+)
+
+(deflayer resize
+  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+  XX	XX	XX	XX	XX	XX	@rz_h	@rz_j	@rz_k	@rz_l	XX	XX	XX
+  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+  XX	XX	XX			XX			XX	XX	XX
 )
 
 (deflayer ctrled
