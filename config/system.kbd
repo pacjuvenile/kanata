@@ -22,8 +22,9 @@
 
   ;; wm配置(only for windows)
   ;; 启动/关闭
-  M-S-s	(cmd "komorebic" "start")
-  M-S-q	(cmd "komorebic" "stop")
+  M-S-s	(cmd "glazewm" "start")
+	M-S-r (cmd "glazewm" "command" "wm-reload-config")
+  M-S-q	(cmd "glazewm" "command" "wm-exit")
 
   ;; 焦点转移
   M-h	(cmd "glazewm" "command" "focus" "--direction" "left")
