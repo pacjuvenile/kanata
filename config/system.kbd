@@ -17,8 +17,6 @@
   lmet	(layer-while-held wined)
   ;; 模拟win + shift按下状态
   M-lsft	(layer-while-held wined-shifted)
-  ;; 模拟win + alt按下状态
-  M-lalt	(layer-while-held wined-alted)
 
   ;; wm配置(only for windows)
   ;; 启动/关闭
@@ -40,7 +38,7 @@
 
   ;; 尺寸调整
 	M-grv	(multi f24 (layer-switch resize))
-	rz-esc (layer-switch base)
+	rz-caps (layer-switch base)
   rz-h	(cmd "glazewm" "command" "resize" "--width" "-2%")
   rz-j	(cmd "glazewm" "command" "resize" "--height" "-2%") 
   rz-k	(cmd "glazewm" "command" "resize" "--height" "+2%")
@@ -54,8 +52,8 @@
   M-x	(cmd "glazewm" "command" "close")
 
   ;; 工作区调整
-  M-n	(cmd "glazewm" "command" "focus" "--next-active-workspace")
   M-p	(cmd "glazewm" "command" "focus" "--prev-active-workspace")
+  M-n	(cmd "glazewm" "command" "focus" "--next-active-workspace")
   M-1	(cmd "glazewm" "command" "focus" "--workspace" "gui1")
   M-2	(cmd "glazewm" "command" "focus" "--workspace" "gui2")
   M-3	(cmd "glazewm" "command" "focus" "--workspace" "code1")
@@ -142,25 +140,16 @@
   M-tab	M-q	M-w	M-e	M-r	@M-t	M-y	M-u	M-i	M-o	@M-p	M-[	M-]	M-\
   M-lctl	M-a	M-s	M-d	@M-f	M-g	@M-h	@M-j	@M-k	@M-l	M-;	M-'	M-ret
   @M-lsft	M-z	@M-x	M-c	M-v	M-b	@M-n	@M-m	M-,	M-.	M-/	M-rsft
-  M-lctl	XX	@M-lalt			M-spc			M-ralt	XX	XX
+  M-lctl	XX	M-lalt			M-spc			M-ralt	XX	XX
 )
 
 (deflayer resize
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  @rz-esc	XX	XX	XX	XX	XX	@rz-h	@rz-j	@rz-k	@rz-l	XX	XX	XX
+  @rz-caps	XX	XX	XX	XX	XX	@rz-h	@rz-j	@rz-k	@rz-l	XX	XX	XX
   XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
   XX	XX	XX			XX			XX	XX	XX
-)
-
-(deflayer wined-alted 
-  M-A-esc	M-A-f1	M-A-f2	M-A-f3	M-A-f4	M-A-f5	M-A-f6	M-A-f7	M-A-f8	M-A-f9	M-A-f10	M-A-f11	M-A-f12	M-A-home	M-A-end	M-A-del
-  M-A-grv	M-A-1	M-A-2	M-A-3	M-A-4	M-A-5	M-A-6	M-A-7	M-A-8	M-A-9	M-A-0	M-A--	M-A-=	M-A-bspc
-  M-A-tab	M-A-q	M-A-w	M-A-e	M-A-r	M-A-t	M-A-y	M-A-u	M-A-i	M-A-o	M-A-p	M-A-[	M-A-]	M-A-\
-  XX	M-A-a	M-A-s	M-A-d	M-A-f	M-A-g	M-A-h	M-A-j	M-A-k	M-A-l	M-A-;	M-A-'	M-A-ret
-  M-A-lsft	M-A-z	M-A-x	M-A-c	M-A-v	M-A-b	M-A-n	M-A-m	M-A-,	M-A-.	M-A-/	M-A-rsft
-  XX	XX	XX			M-A-spc			XX	XX	XX  
 )
 
 (deflayer wined-shifted 
