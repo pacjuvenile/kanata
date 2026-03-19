@@ -1,164 +1,164 @@
 (defcfg 
-  movemouse-inherit-accel-state	yes
-  danger-enable-cmd	yes
+	movemouse-inherit-accel-state	yes
+	danger-enable-cmd	yes
 )
 
 (defsrc 
-  esc	f1	f2	f3	f4	f5	f6	f7	f8	f9	f10	f11	f12	home	end	del
-  grv	1	2	3	4	5	6	7	8	9	0	-	= 	bspc
-  tab	q	w	e	r	t	y	u	i	o	p	[	]	\
-  caps	a	s	d	f	g	h	j	k	l	;	'	ret
-  lsft	z	x	c	v	b	n	m	,	.	/	rsft  
-  lctl	lmet	lalt			spc			ralt	menu	rctl  
+	esc	f1	f2	f3	f4	f5	f6	f7	f8	f9	f10	f11	f12	home	end	del
+	grv	1	2	3	4	5	6	7	8	9	0	-	=		bspc
+	tab	q	w	e	r	t	y	u	i	o	p	[	]	\
+	caps	a	s	d	f	g	h	j	k	l	;	'	ret
+	lsft	z	x	c	v	b	n	m	,	.	/	rsft	
+	lctl	lmet	lalt			spc			ralt	menu	rctl	
 )
 
 (defalias 
-  ;; 模拟win按下状态
-  lmet	(layer-while-held wined)
-  ;; 模拟win + shift按下状态
-  M-lsft	(layer-while-held wined-shifted)
+	;; 模拟win按下状态
+	lmet	(layer-while-held wined)
+	;; 模拟win + shift按下状态
+	M-lsft	(layer-while-held wined-shifted)
 
-  ;; wm配置(only for windows)
-  ;; 启动/关闭
-  M-S-s	(cmd "glazewm" "start")
+	;; wm配置(only for windows)
+	;; 启动/关闭
+	M-S-s	(cmd "glazewm" "start")
 	M-S-r (cmd "glazewm" "command" "wm-reload-config")
-  M-S-q	(cmd "glazewm" "command" "wm-exit")
+	M-S-q	(cmd "glazewm" "command" "wm-exit")
 
-  ;; 焦点转移
-  M-h	(cmd "glazewm" "command" "focus" "--direction" "left")
-  M-j	(cmd "glazewm" "command" "focus" "--direction" "down")
-  M-k	(cmd "glazewm" "command" "focus" "--direction" "up")
-  M-l	(cmd "glazewm" "command" "focus" "--direction" "right")
+	;; 焦点转移
+	M-h	(cmd "glazewm" "command" "focus" "--direction" "left")
+	M-j	(cmd "glazewm" "command" "focus" "--direction" "down")
+	M-k	(cmd "glazewm" "command" "focus" "--direction" "up")
+	M-l	(cmd "glazewm" "command" "focus" "--direction" "right")
 
-  ;; 位置移动 
-  M-S-h	(cmd "glazewm" "command" "move" "--direction" "left")
-  M-S-j	(cmd "glazewm" "command" "move" "--direction" "down") 
-  M-S-k	(cmd "glazewm" "command" "move" "--direction" "up")
-  M-S-l	(cmd "glazewm" "command" "move" "--direction" "right")
+	;; 位置移动 
+	M-S-h	(cmd "glazewm" "command" "move" "--direction" "left")
+	M-S-j	(cmd "glazewm" "command" "move" "--direction" "down") 
+	M-S-k	(cmd "glazewm" "command" "move" "--direction" "up")
+	M-S-l	(cmd "glazewm" "command" "move" "--direction" "right")
 
-  ;; 尺寸调整
+	;; 尺寸调整
 	M-grv	(multi f24 (layer-switch resize))
 	rz-caps (layer-switch base)
-  rz-h	(cmd "glazewm" "command" "resize" "--width" "-2%")
-  rz-j	(cmd "glazewm" "command" "resize" "--height" "-2%") 
-  rz-k	(cmd "glazewm" "command" "resize" "--height" "+2%")
-  rz-l	(cmd "glazewm" "command" "resize" "--width" "+2%")
+	rz-h	(cmd "glazewm" "command" "resize" "--width" "-2%")
+	rz-j	(cmd "glazewm" "command" "resize" "--height" "-2%") 
+	rz-k	(cmd "glazewm" "command" "resize" "--height" "+2%")
+	rz-l	(cmd "glazewm" "command" "resize" "--width" "+2%")
 
-  ;; 窗口管理
-  M-t	(cmd "glazewm" "command" "toggle-tiling-direction")
-  M-f	(cmd "glazewm" "command" "toggle-floating")
-  M-S-f	(cmd "glazewm" "command" "toggle-fullscreen")   
-  M-m	(cmd "glazewm" "command" "toggle-minimized")
-  M-x	(cmd "glazewm" "command" "close")
+	;; 窗口管理
+	M-t	(cmd "glazewm" "command" "toggle-tiling-direction")
+	M-f	(cmd "glazewm" "command" "toggle-floating")
+	M-S-f	(cmd "glazewm" "command" "toggle-fullscreen")		
+	M-m	(cmd "glazewm" "command" "toggle-minimized")
+	M-x	(cmd "glazewm" "command" "close")
 
-  ;; 工作区调整
-  M-p	(cmd "glazewm" "command" "focus" "--prev-active-workspace")
-  M-n	(cmd "glazewm" "command" "focus" "--next-active-workspace")
-  M-1	(cmd "glazewm" "command" "focus" "--workspace" "gui1")
-  M-2	(cmd "glazewm" "command" "focus" "--workspace" "gui2")
-  M-3	(cmd "glazewm" "command" "focus" "--workspace" "code1")
-  M-4	(cmd "glazewm" "command" "focus" "--workspace" "code2")
-  M-5	(cmd "glazewm" "command" "focus" "--workspace" "aux1")
-  M-6	(cmd "glazewm" "command" "focus" "--workspace" "aux2")
-  M-7	(cmd "glazewm" "command" "focus" "--workspace" "demo1")
-  M-8	(cmd "glazewm" "command" "focus" "--workspace" "demo2")
-  M-9	(cmd "glazewm" "command" "focus" "--workspace" "video")
-  M-0	(cmd "glazewm" "command" "focus" "--recent-workspace")
-  M-S-1	(multi (cmd "glazewm" "command" "move" "--workspace" "gui1") (cmd "glazewm" "command" "focus" "--workspace" "gui1"))
-  M-S-2	(multi (cmd "glazewm" "command" "move" "--workspace" "gui2") (cmd "glazewm" "command" "focus" "--workspace" "gui2"))
-  M-S-3	(multi (cmd "glazewm" "command" "move" "--workspace" "code1") (cmd "glazewm" "command" "focus" "--workspace" "code1"))
-  M-S-4	(multi (cmd "glazewm" "command" "move" "--workspace" "code2") (cmd "glazewm" "command" "focus" "--workspace" "code2"))
-  M-S-5	(multi (cmd "glazewm" "command" "move" "--workspace" "aux1") (cmd "glazewm" "command" "focus" "--workspace" "aux1"))
-  M-S-6	(multi (cmd "glazewm" "command" "move" "--workspace" "aux2") (cmd "glazewm" "command" "focus" "--workspace" "aux2"))
-  M-S-7	(multi (cmd "glazewm" "command" "move" "--workspace" "demo1") (cmd "glazewm" "command" "focus" "--workspace" "demo1"))
-  M-S-8	(multi (cmd "glazewm" "command" "move" "--workspace" "demo2") (cmd "glazewm" "command" "focus" "--workspace" "demo2"))
-  M-S-9	(multi (cmd "glazewm" "command" "move" "--workspace" "video") (cmd "glazewm" "command" "focus" "--workspace" "video"))
+	;; 工作区调整
+	M-p	(cmd "glazewm" "command" "focus" "--prev-active-workspace")
+	M-n	(cmd "glazewm" "command" "focus" "--next-active-workspace")
+	M-1	(cmd "glazewm" "command" "focus" "--workspace" "gui1")
+	M-2	(cmd "glazewm" "command" "focus" "--workspace" "gui2")
+	M-3	(cmd "glazewm" "command" "focus" "--workspace" "code1")
+	M-4	(cmd "glazewm" "command" "focus" "--workspace" "code2")
+	M-5	(cmd "glazewm" "command" "focus" "--workspace" "aux1")
+	M-6	(cmd "glazewm" "command" "focus" "--workspace" "aux2")
+	M-7	(cmd "glazewm" "command" "focus" "--workspace" "demo1")
+	M-8	(cmd "glazewm" "command" "focus" "--workspace" "demo2")
+	M-9	(cmd "glazewm" "command" "focus" "--workspace" "video")
+	M-0	(cmd "glazewm" "command" "focus" "--recent-workspace")
+	M-S-1	(multi (cmd "glazewm" "command" "move" "--workspace" "gui1") (cmd "glazewm" "command" "focus" "--workspace" "gui1"))
+	M-S-2	(multi (cmd "glazewm" "command" "move" "--workspace" "gui2") (cmd "glazewm" "command" "focus" "--workspace" "gui2"))
+	M-S-3	(multi (cmd "glazewm" "command" "move" "--workspace" "code1") (cmd "glazewm" "command" "focus" "--workspace" "code1"))
+	M-S-4	(multi (cmd "glazewm" "command" "move" "--workspace" "code2") (cmd "glazewm" "command" "focus" "--workspace" "code2"))
+	M-S-5	(multi (cmd "glazewm" "command" "move" "--workspace" "aux1") (cmd "glazewm" "command" "focus" "--workspace" "aux1"))
+	M-S-6	(multi (cmd "glazewm" "command" "move" "--workspace" "aux2") (cmd "glazewm" "command" "focus" "--workspace" "aux2"))
+	M-S-7	(multi (cmd "glazewm" "command" "move" "--workspace" "demo1") (cmd "glazewm" "command" "focus" "--workspace" "demo1"))
+	M-S-8	(multi (cmd "glazewm" "command" "move" "--workspace" "demo2") (cmd "glazewm" "command" "focus" "--workspace" "demo2"))
+	M-S-9	(multi (cmd "glazewm" "command" "move" "--workspace" "video") (cmd "glazewm" "command" "focus" "--workspace" "video"))
 
-  ;; 短按esc,长按模拟ctrl
-  caps	(tap-hold 200 200 esc (multi f24 (layer-while-held ctrled)))
+	;; 短按esc,长按模拟ctrl
+	caps	(tap-hold 200 200 esc (multi f24 (layer-while-held ctrled)))
 	C-lsft	(layer-while-held ctrled-shifted)
 	C-lalt	(layer-while-held ctrled-alted)
 	C-A-lsft	(layer-while-held ctrled-alted-shifted)
 	
-  ;; 模拟alt按下状态
-  lalt	(layer-while-held alted)
-  ;; 模拟alt + shift按下状态
-  A-lsft	(layer-while-held alted-shifted)
+	;; 模拟alt按下状态
+	lalt	(layer-while-held alted)
+	;; 模拟alt + shift按下状态
+	A-lsft	(layer-while-held alted-shifted)
 
-  ;; alt 按下的映射
-  A-r (cmd "WeaselDeployer" "/deploy")
-  A-h	left
-  A-j	down
-  A-k	up
-  A-l	right
-  ;; alt + shift按下的映射
-  A-S-r	lrld
-  A-S-t	(cmd "wez")
+	;; alt 按下的映射
+	A-r (cmd "WeaselDeployer" "/deploy")
+	A-h	left
+	A-j	down
+	A-k	up
+	A-l	right
+	;; alt + shift按下的映射
+	A-S-r	lrld
+	A-S-t	(cmd "wez")
 
-  ;; 模拟shift按下的状态
-  lsft	(multi f24 (layer-while-held shifted))
+	;; 模拟shift按下的状态
+	lsft	(multi f24 (layer-while-held shifted))
 
-  ;; shift按下的映射
-  S-spc	C-spc
+	;; shift按下的映射
+	S-spc	C-spc
 
-  ;; 鼠标模式
-  A-spc	(multi f24 (layer-switch mouse))
+	;; 鼠标模式
+	A-spc	(multi f24 (layer-switch mouse))
 	m-caps	(tap-hold 200 200 (layer-switch base) lctl)
 	m-y	C-c
 	m-x	C-x
 	m-p	C-v
-  m-w	(movemouse-accel-up     20 1000 3 10)
-  m-a	(movemouse-accel-left   20 1000 3 10)
-  m-s	(movemouse-accel-down   20 1000 3 10)
-  m-d	(movemouse-accel-right  20 1000 3 10)
-  m-h	mlft
-  m-j	(mwheel-down 100 60)
-  m-k	(mwheel-up 100 60)
-  m-l	mrgt
-  m-m	mmid
-  m-ret	(multi mltp (layer-switch base))
-  ;;  鼠标模式下shift按下
-  m-lsft	(layer-while-held mshifted)
-  m-S-h	(mwheel-left 100 60)
-  m-S-j	(mwheel-accel-down 2 500 1.05 0.93)
-  m-S-k	(mwheel-accel-up 2 500 1.05 0.93)
-  m-S-l	(mwheel-right 100 60)
+	m-w	(movemouse-accel-up			20 1000 3 10)
+	m-a	(movemouse-accel-left		20 1000 3 10)
+	m-s	(movemouse-accel-down		20 1000 3 10)
+	m-d	(movemouse-accel-right	20 1000 3 10)
+	m-h	mlft
+	m-j	(mwheel-down 100 60)
+	m-k	(mwheel-up 100 60)
+	m-l	mrgt
+	m-m	mmid
+	m-ret	(multi mltp (layer-switch base))
+	;;	鼠标模式下shift按下
+	m-lsft	(layer-while-held mshifted)
+	m-S-h	(mwheel-left 100 60)
+	m-S-j	(mwheel-accel-down 2 500 1.05 0.93)
+	m-S-k	(mwheel-accel-up 2 500 1.05 0.93)
+	m-S-l	(mwheel-right 100 60)
 )
 
 (deflayer base 
-  esc	A-f1	f2	A-f3	f4	f5	f6	f7	f8	f9	f10	f11	f12	home	end	del
-  grv	1	2	3	4	5	6	7	8	9	0	-	=	bspc
-  tab	q	w	e	r	t	y	u	i	o	p	[	]	\
-  @caps	a	s	d	f	g	h	j	k	l	;	'	ret
-  @lsft	z	x	c	v	b	n	m	,	.	/	rsft
-  lctl	@lmet	@lalt			spc			ralt	menu	rctl  
+	esc	A-f1	f2	A-f3	f4	f5	f6	f7	f8	f9	f10	f11	f12	home	end	del
+	grv	1	2	3	4	5	6	7	8	9	0	-	=	bspc
+	tab	q	w	e	r	t	y	u	i	o	p	[	]	\
+	@caps	a	s	d	f	g	h	j	k	l	;	'	ret
+	@lsft	z	x	c	v	b	n	m	,	.	/	rsft
+	lctl	@lmet	@lalt			spc			ralt	menu	rctl	
 )
 
 (deflayer wined 
-  M-esc	M-f1	M-f2	M-f3	M-f4	M-f5	M-f6	M-f7	M-f8	M-f9	M-f10	M-f11	M-f12	M-home	M-end	M-del
-  @M-grv	@M-1	@M-2	@M-3	@M-4	@M-5	@M-6	@M-7	@M-8	@M-9	@M-0	M--	M-=	M-bspc
-  M-tab	M-q	M-w	M-e	M-r	@M-t	M-y	M-u	M-i	M-o	@M-p	M-[	M-]	M-\
-  M-lctl	M-a	M-s	M-d	@M-f	M-g	@M-h	@M-j	@M-k	@M-l	M-;	M-'	M-ret
-  @M-lsft	M-z	@M-x	M-c	M-v	M-b	@M-n	@M-m	M-,	M-.	M-/	M-rsft
-  M-lctl	XX	M-lalt			M-spc			M-ralt	XX	XX
+	M-esc	M-f1	M-f2	M-f3	M-f4	M-f5	M-f6	M-f7	M-f8	M-f9	M-f10	M-f11	M-f12	M-home	M-end	M-del
+	@M-grv	@M-1	@M-2	@M-3	@M-4	@M-5	@M-6	@M-7	@M-8	@M-9	@M-0	M--	M-=	M-bspc
+	M-tab	M-q	M-w	M-e	M-r	@M-t	M-y	M-u	M-i	M-o	@M-p	M-[	M-]	M-\
+	M-lctl	M-a	M-s	M-d	@M-f	M-g	@M-h	@M-j	@M-k	@M-l	M-;	M-'	M-ret
+	@M-lsft	M-z	@M-x	M-c	M-v	M-b	@M-n	@M-m	M-,	M-.	M-/	M-rsft
+	M-lctl	XX	M-lalt			M-spc			M-ralt	XX	XX
 )
 
 (deflayer resize
-  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  @rz-caps	XX	XX	XX	XX	XX	@rz-h	@rz-j	@rz-k	@rz-l	XX	XX	XX
-  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  XX	XX	XX			XX			XX	XX	XX
+	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	@rz-caps	XX	XX	XX	XX	XX	@rz-h	@rz-j	@rz-k	@rz-l	XX	XX	XX
+	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX			XX			XX	XX	XX
 )
 
 (deflayer wined-shifted 
-  M-S-esc	M-S-f1	M-S-f2	M-S-f3	M-S-f4	M-S-f5	M-S-f6	M-S-f7	M-S-f8	M-S-f9	M-S-f10	M-S-f11	M-S-f12	M-S-home	M-S-end	M-S-del
-  M-S-grv	@M-S-1	@M-S-2	@M-S-3	@M-S-4	@M-S-5	@M-S-6	@M-S-7	@M-S-8	@M-S-9	M-S-0	M-S--	M-S-=	M-S-bspc
-  M-S-tab	@M-S-q	M-S-w	M-S-e	@M-S-r	M-S-t	M-S-y	M-S-u	M-S-i	M-S-o	M-S-p	M-S-[	M-S-]	M-S-\
-  XX	M-S-a	@M-S-s	M-S-d	@M-S-f	M-S-g	@M-S-h	@M-S-j	@M-S-k	@M-S-l	M-S-;	M-S-'	M-S-ret
-  XX	M-S-z	M-S-x	M-S-c	M-S-v	M-S-b	M-S-n	M-S-m	M-S-,	M-S-.	M-S-/	XX
-  XX	XX	XX			M-S-spc			XX	XX	XX  
+	M-S-esc	M-S-f1	M-S-f2	M-S-f3	M-S-f4	M-S-f5	M-S-f6	M-S-f7	M-S-f8	M-S-f9	M-S-f10	M-S-f11	M-S-f12	M-S-home	M-S-end	M-S-del
+	M-S-grv	@M-S-1	@M-S-2	@M-S-3	@M-S-4	@M-S-5	@M-S-6	@M-S-7	@M-S-8	@M-S-9	M-S-0	M-S--	M-S-=	M-S-bspc
+	M-S-tab	@M-S-q	M-S-w	M-S-e	@M-S-r	M-S-t	M-S-y	M-S-u	M-S-i	M-S-o	M-S-p	M-S-[	M-S-]	M-S-\
+	XX	M-S-a	@M-S-s	M-S-d	@M-S-f	M-S-g	@M-S-h	@M-S-j	@M-S-k	@M-S-l	M-S-;	M-S-'	M-S-ret
+	XX	M-S-z	M-S-x	M-S-c	M-S-v	M-S-b	M-S-n	M-S-m	M-S-,	M-S-.	M-S-/	XX
+	XX	XX	XX			M-S-spc			XX	XX	XX	
 )
 
 (deflayer ctrled
@@ -198,46 +198,46 @@
 )
 
 (deflayer alted
-  A-esc	A-f1	A-f2	A-f3	A-f4	A-f5	A-f6	A-f7	A-f8	A-f9	A-f10	A-f11	A-f12	A-home	A-end	A-del
-  A-grv	A-1	A-2	A-3	A-4	A-5	A-6	A-7	A-8	A-9	A-0	A--	A-=	A-bspc
-  A-tab	A-q	A-w	A-e	@A-r	A-t	A-y	A-u	A-i	A-o	A-p	A-[	A-]	A-\
-  XX	A-a	A-s	A-d	A-f	A-g	@A-h	@A-j	@A-k	@A-l	A-;	A-'	A-ret
-  @A-lsft	A-z	A-x	A-c	A-v	A-b	A-n	A-m	A-,	A-.	A-/	A-rsft
-  XX	XX	XX			@A-spc	XX	XX	XX
+	A-esc	A-f1	A-f2	A-f3	A-f4	A-f5	A-f6	A-f7	A-f8	A-f9	A-f10	A-f11	A-f12	A-home	A-end	A-del
+	A-grv	A-1	A-2	A-3	A-4	A-5	A-6	A-7	A-8	A-9	A-0	A--	A-=	A-bspc
+	A-tab	A-q	A-w	A-e	@A-r	A-t	A-y	A-u	A-i	A-o	A-p	A-[	A-]	A-\
+	XX	A-a	A-s	A-d	A-f	A-g	@A-h	@A-j	@A-k	@A-l	A-;	A-'	A-ret
+	@A-lsft	A-z	A-x	A-c	A-v	A-b	A-n	A-m	A-,	A-.	A-/	A-rsft
+	XX	XX	XX			@A-spc	XX	XX	XX
 )
 
 (deflayer alted-shifted 
-  A-S-esc	A-S-f1	A-S-f2	A-S-f3	A-S-f4	A-S-f5	A-S-f6	A-S-f7	A-S-f8	A-S-f9	A-S-f10	A-S-f11	A-S-f12	A-S-home	A-S-end	A-S-del
-  A-S-grv	A-S-1	A-S-2	A-S-3	A-S-4	A-S-5	A-S-6	A-S-7	A-S-8	A-S-9	A-S-0	A-S--	A-S-=	A-S-bspc
-  A-S-tab	A-S-q	A-S-w	A-S-e	@A-S-r	@A-S-t	A-S-y	A-S-u	A-S-i	A-S-o	A-S-p	A-S-[	A-S-]	A-S-\
-  XX	A-S-a	A-S-s	A-S-d	A-S-f	A-S-g	A-S-h	A-S-j	A-S-k	A-S-l	A-S-;	A-S-'	A-S-ret
-  XX	A-S-z	A-S-x	A-S-c	A-S-v	A-S-b	A-S-n	A-S-m	A-S-,	A-S-.	A-S-/	XX
-  XX	XX	XX			A-S-spc			XX	XX	XX
+	A-S-esc	A-S-f1	A-S-f2	A-S-f3	A-S-f4	A-S-f5	A-S-f6	A-S-f7	A-S-f8	A-S-f9	A-S-f10	A-S-f11	A-S-f12	A-S-home	A-S-end	A-S-del
+	A-S-grv	A-S-1	A-S-2	A-S-3	A-S-4	A-S-5	A-S-6	A-S-7	A-S-8	A-S-9	A-S-0	A-S--	A-S-=	A-S-bspc
+	A-S-tab	A-S-q	A-S-w	A-S-e	@A-S-r	@A-S-t	A-S-y	A-S-u	A-S-i	A-S-o	A-S-p	A-S-[	A-S-]	A-S-\
+	XX	A-S-a	A-S-s	A-S-d	A-S-f	A-S-g	A-S-h	A-S-j	A-S-k	A-S-l	A-S-;	A-S-'	A-S-ret
+	XX	A-S-z	A-S-x	A-S-c	A-S-v	A-S-b	A-S-n	A-S-m	A-S-,	A-S-.	A-S-/	XX
+	XX	XX	XX			A-S-spc			XX	XX	XX
 )
 
 (deflayer shifted
-  S-esc	S-f1	S-f2	S-f3	S-f4	S-f5	S-f6	S-f7	S-f8	S-f9	S-f10	S-f11	S-f12	S-home	S-end	S-del
-  S-grv	S-1	S-2	S-3	S-4	S-5	S-6	S-7	S-8	S-9	S-0	S--	S-=	S-bspc
-  S-tab	S-q	S-w	S-e	S-r	S-t	S-y	S-u	S-i	S-o	S-p	S-[	S-]	S-\
-  @caps	S-a	S-s	S-d	S-f	S-g	S-h	S-j	S-k	S-l	S-;	S-'	S-ret
-  XX	S-z	S-x	S-c	S-v	S-b	S-n	S-m	S-,	S-.	S-/	XX
-  XX	XX	XX			@S-spc			XX	XX	XX
+	S-esc	S-f1	S-f2	S-f3	S-f4	S-f5	S-f6	S-f7	S-f8	S-f9	S-f10	S-f11	S-f12	S-home	S-end	S-del
+	S-grv	S-1	S-2	S-3	S-4	S-5	S-6	S-7	S-8	S-9	S-0	S--	S-=	S-bspc
+	S-tab	S-q	S-w	S-e	S-r	S-t	S-y	S-u	S-i	S-o	S-p	S-[	S-]	S-\
+	@caps	S-a	S-s	S-d	S-f	S-g	S-h	S-j	S-k	S-l	S-;	S-'	S-ret
+	XX	S-z	S-x	S-c	S-v	S-b	S-n	S-m	S-,	S-.	S-/	XX
+	XX	XX	XX			@S-spc			XX	XX	XX
 )
 
 (deflayer mouse
-  esc	A-f1	f2	A-f3	f4	f5	f6	f7	f8	f9	f10	f11	f12	home	end	del
-  grv	1	2	3	4	5	6	7	8	9	0	-	=	bspc
-  tab	XX	@m-w	XX	XX	XX	@m-y	XX	XX	XX	@m-p	XX	XX	XX
-  @m-caps	@m-a	@m-s	@m-d	XX	XX	@m-h	@m-j	@m-k	@m-l	XX	XX	@m-ret
-  @m-lsft	XX	@m-x	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  lctl	@lmet	@lalt					XX			ralt	menu	rctl
+	esc	A-f1	f2	A-f3	f4	f5	f6	f7	f8	f9	f10	f11	f12	home	end	del
+	grv	1	2	3	4	5	6	7	8	9	0	-	=	bspc
+	tab	XX	@m-w	XX	XX	XX	@m-y	XX	XX	XX	@m-p	XX	XX	XX
+	@m-caps	@m-a	@m-s	@m-d	XX	XX	@m-h	@m-j	@m-k	@m-l	XX	XX	@m-ret
+	@m-lsft	XX	@m-x	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	lctl	@lmet	@lalt					XX			ralt	menu	rctl
 )
 
 (deflayer mshifted
-  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  XX	XX	XX	XX	XX	XX	@m-S-h	@m-S-j	@m-S-k	@m-S-l	XX	XX	XX
-  XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-  XX	XX	XX			XX			XX	XX	XX
+	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX	XX	XX	XX	@m-S-h	@m-S-j	@m-S-k	@m-S-l	XX	XX	XX
+	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX			XX			XX	XX	XX
 )
