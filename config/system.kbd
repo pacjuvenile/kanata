@@ -81,7 +81,7 @@
 	C-A-lsft	(layer-while-held ctrled-alted-shifted)
 	
 	;; 模拟alt按下状态
-	lalt	(multi f24 (layer-while-held alted))
+	lalt	(layer-while-held alted)
 	;; 模拟alt + shift按下状态
 	A-lsft	(multi f24 (layer-while-held alted-shifted))
 
