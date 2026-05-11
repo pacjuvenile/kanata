@@ -13,6 +13,8 @@
 )
 
 (defalias 
+	;; 回车按下后切换输入法至英文状态
+	ret (multi f24 ret)
 	;; 模拟win按下状态
 	lmet	(layer-while-held wined)
 	;; 模拟win + shift按下状态
@@ -83,7 +85,7 @@
 	;; 模拟alt按下状态
 	lalt	(layer-while-held alted)
 	;; 模拟alt + shift按下状态
-	A-lsft	(multi f24 (layer-while-held alted-shifted))
+	A-lsft	(layer-while-held alted-shifted)
 
 	;; alt 按下的映射
 	A-r (cmd "WeaselDeployer" "/deploy")
@@ -131,7 +133,7 @@
 	esc	A-f1	f2	A-f3	f4	f5	f6	f7	f8	f9	f10	f11	f12	home	end	del
 	grv	1	2	3	4	5	6	7	8	9	0	-	=	bspc
 	tab	q	w	e	r	t	y	u	i	o	p	[	]	\
-	@caps	a	s	d	f	g	h	j	k	l	;	'	ret
+	@caps	a	s	d	f	g	h	j	k	l	;	'	@ret
 	@lsft	z	x	c	v	b	n	m	,	.	/	rsft
 	lctl	@lmet	@lalt			spc			ralt	menu	rctl	
 )
