@@ -32,17 +32,17 @@
 	M-k	(cmd "glazewm" "command" "focus" "--direction" "up")
 	M-l	(cmd "glazewm" "command" "focus" "--direction" "right")
 
-	;; 尺寸调整
-	M-S-h	(cmd "glazewm" "command" "resize" "--width" "-2%")
-	M-S-j	(cmd "glazewm" "command" "resize" "--height" "-2%") 
-	M-S-k	(cmd "glazewm" "command" "resize" "--height" "+2%")
-	M-S-l	(cmd "glazewm" "command" "resize" "--width" "+2%")
-
 	;; 位置转移
 	M-A-h	(cmd "glazewm" "command" "move" "--direction" "left")
 	M-A-j	(cmd "glazewm" "command" "move" "--direction" "down") 
 	M-A-k	(cmd "glazewm" "command" "move" "--direction" "up")
 	M-A-l	(cmd "glazewm" "command" "move" "--direction" "right")
+
+	;; 尺寸调整
+	M-S-h	(cmd "glazewm" "command" "resize" "--width" "-2%")
+	M-S-j	(cmd "glazewm" "command" "resize" "--height" "-2%") 
+	M-S-k	(cmd "glazewm" "command" "resize" "--height" "+2%")
+	M-S-l	(cmd "glazewm" "command" "resize" "--width" "+2%")
 
 	;; 窗口管理
 	M-t	(cmd "glazewm" "command" "toggle-tiling-direction")
