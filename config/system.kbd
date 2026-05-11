@@ -77,7 +77,7 @@
 	M-S-9	(multi (cmd "glazewm" "command" "move" "--workspace" "video") (cmd "glazewm" "command" "focus" "--workspace" "video"))
 
 	;; 短按esc,长按模拟ctrl
-	caps	(tap-hold 200 200 esc (multi f24 (layer-while-held ctrled)))
+	caps	(tap-hold 200 200 (multi f24 esc) (multi f24 (layer-while-held ctrled)))
 	C-lsft	(layer-while-held ctrled-shifted)
 	C-lalt	(layer-while-held ctrled-alted)
 	C-A-lsft	(layer-while-held ctrled-alted-shifted)
