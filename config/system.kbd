@@ -220,7 +220,7 @@
 	grv	1	2	3	4	5	6	7	8	9	0	-	=	bspc
 	tab	XX	@m-w	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
 	@m-caps	@m-a	@m-s	@m-d	XX	XX	@m-h	@m-j	@m-k	@m-l	XX	XX	@m-ret
-	@m-lsft	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	@m-lsft	XX	XX	XX	XX	XX	XX	@m-m	XX	XX	XX	XX
 	lctl	@lmet	@lalt					XX			ralt	menu	rctl
 )
 
