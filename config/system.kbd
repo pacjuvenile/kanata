@@ -114,12 +114,13 @@
 	m-ret	(multi mltp (layer-switch base))
 	;;	鼠标模式下shift按下
 	m-lsft	(layer-while-held mshifted)
+	m-S-y	C-y
 	m-S-a	C-a
 	m-S-d	C-d
-	m-S-y	C-c
-	m-S-x	C-x
-	m-S-p	C-v
 	m-S-z	C-z
+	m-S-x	C-x
+	m-S-c	C-c
+	m-S-v	C-v
 	m-S-h	(mwheel-left 100 60)
 	m-S-j	(mwheel-accel-down 2 500 1.05 0.93)
 	m-S-k	(mwheel-accel-up 2 500 1.05 0.93)
@@ -228,8 +229,8 @@
 (deflayer mshifted
 	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
 	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
-	XX	XX	XX	XX	XX	XX	@m-S-y	XX	XX	XX	@m-S-p	XX	XX	XX
-	XX	@m-S-a	XX	@m-S-d	XX	XX	@m-S-h	@m-S-j	@m-S-k	@m-S-l	XX	XX	XX
-	XX	@m-S-z	@m-S-x	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX	XX	XX	XX	@m-S-y	XX	XX	XX	XX	XX	XX	XX
+	esc	@m-S-a	XX	@m-S-d	XX	XX	@m-S-h	@m-S-j	@m-S-k	@m-S-l	XX	XX	XX
+	XX	@m-S-z	@m-S-x	@m-S-c	@m-S-v	XX	XX	XX	XX	XX	XX	XX
 	XX	XX	XX			XX			XX	XX	XX
 )
